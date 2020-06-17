@@ -1,8 +1,3 @@
-#include "../include/glad/glad.h"
-
-#include "../include/GLFW/glfw3.h"
-#pragma comment(lib,"../lib/glfw3.lib")
-
 
 #include "Shader.h"
 
@@ -10,220 +5,221 @@
 
 #define GET_ARRAY_SIZE(array,length){length = (sizeof(array) / sizeof(array[0]));}
 
-namespace {
-	void framebuffer_size_callback(GLFWwindow* window, int width, int height)
-	{
-		glViewport(0, 0, width, height);
-	}
+// namespace {
+// 	void framebuffer_size_callback(GLFWwindow* window, int width, int height)
+// 	{
+// 		glViewport(0, 0, width, height);
+// 	}
 
-	void processInput(GLFWwindow *window)
-	{
-		//°´escÍË³ö
-		if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
-			glfwSetWindowShouldClose(window, true);
-	}
+// 	void processInput(GLFWwindow *window)
+// 	{
+// 		//ï¿½ï¿½escï¿½Ë³ï¿½
+// 		if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
+// 			glfwSetWindowShouldClose(window, true);
+// 	}
 
-	void openglInit(int major, int minor) {
-		//glfw³õÊ¼»¯
-		glfwInit();
-		//ÏÂÃæÁ½¾äÊÇÉèÖÃ°æ±¾£¬GLFW_CONTEXT_VERSION_MAJOR->Ö÷°æ±¾ GLFW_CONTEXT_VERSION_MINOR->Ð¡°æ±¾
-		glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, major);
-		glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, minor);
-		//ÉèÖÃÊ¹ÓÃºËÐÄÄ£Ê½
-		glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
-#ifdef __APPLE__
-		glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
-#endif
-	}
-}
+// 	void openglInit(int major, int minor) {
+// 		//glfwï¿½ï¿½Ê¼ï¿½ï¿½
+// 		glfwInit();
+// 		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã°æ±¾ï¿½ï¿½GLFW_CONTEXT_VERSION_MAJOR->ï¿½ï¿½ï¿½æ±¾ GLFW_CONTEXT_VERSION_MINOR->Ð¡ï¿½æ±¾
+// 		glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, major);
+// 		glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, minor);
+// 		//ï¿½ï¿½ï¿½ï¿½Ê¹ï¿½Ãºï¿½ï¿½ï¿½Ä£Ê½
+// 		glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+// #ifdef __APPLE__
+// 		glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
+// #endif
+// 	}
+// }
 
 
 int main()
 {
-	openglInit(4, 3);
+	std::cout<<"hello"<<std::endl;
+	// openglInit(4, 3);
 	
-	//glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
-	//´´½¨´°¿Ú
-	GLFWwindow* window = glfwCreateWindow(1000, 800, "learn opengl", NULL, NULL);
-	//ÉèÖÃµ±Ç°´°¿ÚµÄÉÏÏÂÎÄ
-	glfwMakeContextCurrent(window);
-	//glad³õÊ¼»¯
-	if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
-	{
-		std::cout << "Failed to initialize GLAD" << std::endl;
-		return -1;
-	}
-	//ÅÐ¶Ï´°¿Ú
-	if (window == NULL)
-	{
-		std::cout << "Failed to create GLFW window" << std::endl;
-		glfwTerminate();
-		return -1;
-	}
-	//ÉèÖÃÊÓµã
-	glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
-	////Èý½ÇÐÎ¶¥µãÊý×é
-	//float vertices[] = {
-	//	-0.5f, -0.5f, 0.0f,
-	//	0.5f, -0.5f, 0.0f,
-	//	0.0f,  0.5f, 0.0f
-	//};
-	////Á½¸öÈý½ÇÐÎ ÆÕÍ¨äÖÈ¾·½Ê½
-	//float vertices[] = {
-	//	// µÚÒ»¸öÈý½ÇÐÎ
-	//	0.5f, 0.5f, 0.0f,   // ÓÒÉÏ½Ç
-	//	0.5f, -0.5f, 0.0f,  // ÓÒÏÂ½Ç
-	//	-0.5f, 0.5f, 0.0f,  // ×óÉÏ½Ç
-	//	// µÚ¶þ¸öÈý½ÇÐÎ
-	//	0.5f, -0.5f, 0.0f,  // ÓÒÏÂ½Ç
-	//	-0.5f, -0.5f, 0.0f, // ×óÏÂ½Ç
-	//	-0.5f, 0.5f, 0.0f   // ×óÉÏ½Ç
-	//};
+	// //glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
+	// //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	// GLFWwindow* window = glfwCreateWindow(1000, 800, "learn opengl", NULL, NULL);
+	// //ï¿½ï¿½ï¿½Ãµï¿½Ç°ï¿½ï¿½ï¿½Úµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	// glfwMakeContextCurrent(window);
+	// //gladï¿½ï¿½Ê¼ï¿½ï¿½
+	// if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
+	// {
+	// 	std::cout << "Failed to initialize GLAD" << std::endl;
+	// 	return -1;
+	// }
+	// //ï¿½Ð¶Ï´ï¿½ï¿½ï¿½
+	// if (window == NULL)
+	// {
+	// 	std::cout << "Failed to create GLFW window" << std::endl;
+	// 	glfwTerminate();
+	// 	return -1;
+	// }
+	// //ï¿½ï¿½ï¿½ï¿½ï¿½Óµï¿½
+	// glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
+	// ////ï¿½ï¿½ï¿½ï¿½ï¿½Î¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	// //float vertices[] = {
+	// //	-0.5f, -0.5f, 0.0f,
+	// //	0.5f, -0.5f, 0.0f,
+	// //	0.0f,  0.5f, 0.0f
+	// //};
+	// ////ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Í¨ï¿½ï¿½È¾ï¿½ï¿½Ê½
+	// //float vertices[] = {
+	// //	// ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	// //	0.5f, 0.5f, 0.0f,   // ï¿½ï¿½ï¿½Ï½ï¿½
+	// //	0.5f, -0.5f, 0.0f,  // ï¿½ï¿½ï¿½Â½ï¿½
+	// //	-0.5f, 0.5f, 0.0f,  // ï¿½ï¿½ï¿½Ï½ï¿½
+	// //	// ï¿½Ú¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	// //	0.5f, -0.5f, 0.0f,  // ï¿½ï¿½ï¿½Â½ï¿½
+	// //	-0.5f, -0.5f, 0.0f, // ï¿½ï¿½ï¿½Â½ï¿½
+	// //	-0.5f, 0.5f, 0.0f   // ï¿½ï¿½ï¿½Ï½ï¿½
+	// //};
 	
-	unsigned int indices[] = { // ×¢ÒâË÷Òý´Ó0¿ªÊ¼! 
-		0, 1, 2 // µÚÒ»¸öÈý½ÇÐÎ
-	};
-	float vertices[] = {
-		0.0f, 0.7f, 0.0f,   // ÓÒÉÏ½Ç
-		-0.7f, -0.7f, 0.0f,  // ÓÒÏÂ½Ç
-		0.7f, -0.7f, 0.0f, // ×óÏÂ½Ç
-	};
-	float colors[] = {
-		1.0f, 0.0f, 0.0f,   // ÓÒÉÏ½Ç
-		0.0f,0.0f, 1.0f,  // ÓÒÏÂ½Ç
-		0.0f, 1.0f, 0.0f,  // ×óÏÂ½Ç
-	};
+	// unsigned int indices[] = { // ×¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½0ï¿½ï¿½Ê¼! 
+	// 	0, 1, 2 // ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	// };
+	// float vertices[] = {
+	// 	0.0f, 0.7f, 0.0f,   // ï¿½ï¿½ï¿½Ï½ï¿½
+	// 	-0.7f, -0.7f, 0.0f,  // ï¿½ï¿½ï¿½Â½ï¿½
+	// 	0.7f, -0.7f, 0.0f, // ï¿½ï¿½ï¿½Â½ï¿½
+	// };
+	// float colors[] = {
+	// 	1.0f, 0.0f, 0.0f,   // ï¿½ï¿½ï¿½Ï½ï¿½
+	// 	0.0f,0.0f, 1.0f,  // ï¿½ï¿½ï¿½Â½ï¿½
+	// 	0.0f, 1.0f, 0.0f,  // ï¿½ï¿½ï¿½Â½ï¿½
+	// };
 
-	float quadVertices[] = { // vertex attributes for a quad that fills the entire screen in Normalized Device Coordinates.
-							 // positions   // texCoords
-		-1.0f,  1.0f,  0.0f, 1.0f,
-		-1.0f, -1.0f,  0.0f, 0.0f,
-		1.0f, -1.0f,  1.0f, 0.0f,
+	// float quadVertices[] = { // vertex attributes for a quad that fills the entire screen in Normalized Device Coordinates.
+	// 						 // positions   // texCoords
+	// 	-1.0f,  1.0f,  0.0f, 1.0f,
+	// 	-1.0f, -1.0f,  0.0f, 0.0f,
+	// 	1.0f, -1.0f,  1.0f, 0.0f,
 
-		-1.0f,  1.0f,  0.0f, 1.0f,
-		1.0f, -1.0f,  1.0f, 0.0f,
-		1.0f,  1.0f,  1.0f, 1.0f
-	};
+	// 	-1.0f,  1.0f,  0.0f, 1.0f,
+	// 	1.0f, -1.0f,  1.0f, 0.0f,
+	// 	1.0f,  1.0f,  1.0f, 1.0f
+	// };
 
-	int verticesLength;
-	int	indicesLength;
-	GET_ARRAY_SIZE(vertices, verticesLength);
-	GET_ARRAY_SIZE(indices, indicesLength);
+	// int verticesLength;
+	// int	indicesLength;
+	// GET_ARRAY_SIZE(vertices, verticesLength);
+	// GET_ARRAY_SIZE(indices, indicesLength);
 
-	// screen quad VAO
-	unsigned int quadVAO, quadVBO;
-	glGenVertexArrays(1, &quadVAO);
-	glGenBuffers(1, &quadVBO);
-	glBindVertexArray(quadVAO);
-	glBindBuffer(GL_ARRAY_BUFFER, quadVBO);
-	glBufferData(GL_ARRAY_BUFFER, sizeof(quadVertices), &quadVertices, GL_STATIC_DRAW);
-	glEnableVertexAttribArray(0);
-	glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 4 * sizeof(float), (void*)0);
-	glEnableVertexAttribArray(1);
-	glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 4 * sizeof(float), (void*)(2 * sizeof(float)));
+	// // screen quad VAO
+	// unsigned int quadVAO, quadVBO;
+	// glGenVertexArrays(1, &quadVAO);
+	// glGenBuffers(1, &quadVBO);
+	// glBindVertexArray(quadVAO);
+	// glBindBuffer(GL_ARRAY_BUFFER, quadVBO);
+	// glBufferData(GL_ARRAY_BUFFER, sizeof(quadVertices), &quadVertices, GL_STATIC_DRAW);
+	// glEnableVertexAttribArray(0);
+	// glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 4 * sizeof(float), (void*)0);
+	// glEnableVertexAttribArray(1);
+	// glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 4 * sizeof(float), (void*)(2 * sizeof(float)));
 
 
 
-	//´´½¨vbo
-	unsigned int VBO[2];
-	glGenBuffers(2, VBO);
-	//ÐÂ½¨vao
-	unsigned int VAO;
-	glGenVertexArrays(1, &VAO);
-	//°ó¶¨VAO
-	glBindVertexArray(VAO);
-	//°ó¶¨vbo ×¢ÒâË³Ðò
-	glBindBuffer(GL_ARRAY_BUFFER, VBO[0]);
-	glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
-	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
-	glEnableVertexAttribArray(0);
-	glBindBuffer(GL_ARRAY_BUFFER, VBO[1]);
-	glBufferData(GL_ARRAY_BUFFER, sizeof(colors), colors, GL_STATIC_DRAW);
-	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
-	glEnableVertexAttribArray(1);
-	//°ó¶¨Êý¾Ý
+	// //ï¿½ï¿½ï¿½ï¿½vbo
+	// unsigned int VBO[2];
+	// glGenBuffers(2, VBO);
+	// //ï¿½Â½ï¿½vao
+	// unsigned int VAO;
+	// glGenVertexArrays(1, &VAO);
+	// //ï¿½ï¿½VAO
+	// glBindVertexArray(VAO);
+	// //ï¿½ï¿½vbo ×¢ï¿½ï¿½Ë³ï¿½ï¿½
+	// glBindBuffer(GL_ARRAY_BUFFER, VBO[0]);
+	// glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
+	// glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
+	// glEnableVertexAttribArray(0);
+	// glBindBuffer(GL_ARRAY_BUFFER, VBO[1]);
+	// glBufferData(GL_ARRAY_BUFFER, sizeof(colors), colors, GL_STATIC_DRAW);
+	// glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
+	// glEnableVertexAttribArray(1);
+	// //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	
 
-	//ÀûÓÃebo»æÖÆÈý½ÇÐÎ
-	{
-		//´´½¨ebo 
-		unsigned int EBO;
-		glGenBuffers(1, &EBO);
-		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
-		glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
-	}
-	//ÉèÖÃ¶¥µãÊôÐÔµÄÖ¸Õë
-	Shader fsShader("shader.fs");
-	Shader vsShader("shader.vs");
-	ShaderProgram shaderProgram(vsShader.code, fsShader.code);
-	shaderProgram.use();
+	// //ï¿½ï¿½ï¿½ï¿½eboï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	// {
+	// 	//ï¿½ï¿½ï¿½ï¿½ebo 
+	// 	unsigned int EBO;
+	// 	glGenBuffers(1, &EBO);
+	// 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
+	// 	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
+	// }
+	// //ï¿½ï¿½ï¿½Ã¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ôµï¿½Ö¸ï¿½ï¿½
+	// Shader fsShader("shader.fs");
+	// Shader vsShader("shader.vs");
+	// ShaderProgram shaderProgram(vsShader.code, fsShader.code);
+	// shaderProgram.use();
 
-	Shader ffsShader("screen.fs");
-	Shader fvsShader("screen.vs");
-	ShaderProgram fshaderProgram(fvsShader.code, ffsShader.code);
-	fshaderProgram.use();
-	fshaderProgram.setInt("screenTexture", 0);
-	// framebuffer configuration
-	// -------------------------
-	unsigned int framebuffer;
-	glGenFramebuffers(1, &framebuffer);
-	glBindFramebuffer(GL_FRAMEBUFFER, framebuffer);
-	// create a color attachment texture
-	unsigned int textureColorbuffer;
-	glGenTextures(1, &textureColorbuffer);
-	glBindTexture(GL_TEXTURE_2D, textureColorbuffer);
-	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, 1000, 800, 0, GL_RGB, GL_UNSIGNED_BYTE, NULL);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-	glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, textureColorbuffer, 0);
-	// create a renderbuffer object for depth and stencil attachment (we won't be sampling these)
-	unsigned int rbo;
-	glGenRenderbuffers(1, &rbo);
-	glBindRenderbuffer(GL_RENDERBUFFER, rbo);
-	glRenderbufferStorage(GL_RENDERBUFFER, GL_DEPTH24_STENCIL8, 1024, 1024); // use a single renderbuffer object for both a depth AND stencil buffer.
-	glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_STENCIL_ATTACHMENT, GL_RENDERBUFFER, rbo); // now actually attach it
-																								  // now that we actually created the framebuffer and added all attachments we want to check if it is actually complete now
-	if (glCheckFramebufferStatus(GL_FRAMEBUFFER) != GL_FRAMEBUFFER_COMPLETE)
-		std::cout << "ERROR::FRAMEBUFFER:: Framebuffer is not complete!" << std::endl;
-	glBindFramebuffer(GL_FRAMEBUFFER, 0);
-	// draw as wireframe
-	//glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+	// Shader ffsShader("screen.fs");
+	// Shader fvsShader("screen.vs");
+	// ShaderProgram fshaderProgram(fvsShader.code, ffsShader.code);
+	// fshaderProgram.use();
+	// fshaderProgram.setInt("screenTexture", 0);
+	// // framebuffer configuration
+	// // -------------------------
+	// unsigned int framebuffer;
+	// glGenFramebuffers(1, &framebuffer);
+	// glBindFramebuffer(GL_FRAMEBUFFER, framebuffer);
+	// // create a color attachment texture
+	// unsigned int textureColorbuffer;
+	// glGenTextures(1, &textureColorbuffer);
+	// glBindTexture(GL_TEXTURE_2D, textureColorbuffer);
+	// glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, 1000, 800, 0, GL_RGB, GL_UNSIGNED_BYTE, NULL);
+	// glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+	// glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+	// glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, textureColorbuffer, 0);
+	// // create a renderbuffer object for depth and stencil attachment (we won't be sampling these)
+	// unsigned int rbo;
+	// glGenRenderbuffers(1, &rbo);
+	// glBindRenderbuffer(GL_RENDERBUFFER, rbo);
+	// glRenderbufferStorage(GL_RENDERBUFFER, GL_DEPTH24_STENCIL8, 1024, 1024); // use a single renderbuffer object for both a depth AND stencil buffer.
+	// glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_STENCIL_ATTACHMENT, GL_RENDERBUFFER, rbo); // now actually attach it
+	// 																							  // now that we actually created the framebuffer and added all attachments we want to check if it is actually complete now
+	// if (glCheckFramebufferStatus(GL_FRAMEBUFFER) != GL_FRAMEBUFFER_COMPLETE)
+	// 	std::cout << "ERROR::FRAMEBUFFER:: Framebuffer is not complete!" << std::endl;
+	// glBindFramebuffer(GL_FRAMEBUFFER, 0);
+	// // draw as wireframe
+	// //glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 
-	//Ñ­»·äÖÈ¾
-	while (!glfwWindowShouldClose(window))
-	{
-		processInput(window);
-		// render
-		// ------
-		// bind to framebuffer and draw scene as we normally would to color texture 
-		glBindFramebuffer(GL_FRAMEBUFFER, framebuffer);
-		glEnable(GL_DEPTH_TEST); // enable depth testing (is disabled for rendering screen-space quad)
+	// //Ñ­ï¿½ï¿½ï¿½ï¿½È¾
+	// while (!glfwWindowShouldClose(window))
+	// {
+	// 	processInput(window);
+	// 	// render
+	// 	// ------
+	// 	// bind to framebuffer and draw scene as we normally would to color texture 
+	// 	glBindFramebuffer(GL_FRAMEBUFFER, framebuffer);
+	// 	glEnable(GL_DEPTH_TEST); // enable depth testing (is disabled for rendering screen-space quad)
 
-								 // make sure we clear the framebuffer's content
-		glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
-		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-		shaderProgram.use();
-		glBindVertexArray(VAO);
-		glDrawArrays(GL_TRIANGLES, 0, 3);
-		glBindVertexArray(0);
+	// 							 // make sure we clear the framebuffer's content
+	// 	glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
+	// 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+	// 	shaderProgram.use();
+	// 	glBindVertexArray(VAO);
+	// 	glDrawArrays(GL_TRIANGLES, 0, 3);
+	// 	glBindVertexArray(0);
 
-		// now bind back to default framebuffer and draw a quad plane with the attached framebuffer color texture
-		glBindFramebuffer(GL_FRAMEBUFFER, 0);
-		glDisable(GL_DEPTH_TEST); // disable depth test so screen-space quad isn't discarded due
+	// 	// now bind back to default framebuffer and draw a quad plane with the attached framebuffer color texture
+	// 	glBindFramebuffer(GL_FRAMEBUFFER, 0);
+	// 	glDisable(GL_DEPTH_TEST); // disable depth test so screen-space quad isn't discarded due
 		
-		fshaderProgram.use();
-		// clear all relevant buffers
-		glClearColor(0.0f, 0.0f, 0.0f, 1.0f); // set clear color to white (not really necessery actually, since we won't be able to see behind the quad anyways)
-		glClear(GL_COLOR_BUFFER_BIT);
-		glBindVertexArray(quadVAO);
-		glBindTexture(GL_TEXTURE_2D, textureColorbuffer);	// use the color attachment texture as the texture of the quad plane
-		glDrawArrays(GL_TRIANGLES, 0, 6);
-		//½»»»»º´æ
-		glfwSwapBuffers(window);
-		//ÊÂ¼þÂÖÑ¯
-		glfwPollEvents();
-	}
-	//ÖÕÖ¹glfw
-	glfwTerminate();
+	// 	fshaderProgram.use();
+	// 	// clear all relevant buffers
+	// 	glClearColor(0.0f, 0.0f, 0.0f, 1.0f); // set clear color to white (not really necessery actually, since we won't be able to see behind the quad anyways)
+	// 	glClear(GL_COLOR_BUFFER_BIT);
+	// 	glBindVertexArray(quadVAO);
+	// 	glBindTexture(GL_TEXTURE_2D, textureColorbuffer);	// use the color attachment texture as the texture of the quad plane
+	// 	glDrawArrays(GL_TRIANGLES, 0, 6);
+	// 	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	// 	glfwSwapBuffers(window);
+	// 	//ï¿½Â¼ï¿½ï¿½ï¿½Ñ¯
+	// 	glfwPollEvents();
+	// }
+	// //ï¿½ï¿½Ö¹glfw
+	// glfwTerminate();
 	return 0;
 }

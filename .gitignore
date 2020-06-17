@@ -3,6 +3,8 @@
 /lib
 /x64
 /Debug
+/.vscode
+/build
 *.sln
 *.db
 *.opendb
