@@ -5,6 +5,8 @@ message(${PROJECT_SOURCE_DIR})
 
 include_directories(${PROJECT_SOURCE_DIR}/include)
 find_package(OpenGL REQUIRED)
+
+message(${OPGNGL})
 #find_package(glfw3 REQUIRED)
 set( CMAKE_CXX_FLAGS "-std=c++11" )
 # 查找当前目录下的所有源文件
