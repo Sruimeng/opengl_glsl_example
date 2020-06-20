@@ -15,8 +15,6 @@ if(NOT OPENGL_FOUND)
     message(ERROR " OPENGL not found!")
 endif(NOT OPENGL_FOUND)
 
-add_library(glad "include/glad/glad.c")
-
 #find_package(glfw3 REQUIRED)
 set( CMAKE_CXX_FLAGS "-std=c++11" )
 # 查找当前目录下的所有源文件

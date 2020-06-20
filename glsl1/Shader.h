@@ -2,9 +2,7 @@
 
 #ifndef SHADER_H
 #define SHADER_H
-
 #include "../include/glad/glad.h"
-
 #include <string>
 #include <fstream>
 #include <sstream>
@@ -38,7 +36,7 @@ private:
 
 class ShaderProgram {
 public:
-	unsigned int ID;//shader³ÌÐòµÄid
+	unsigned int ID;//shaderï¿½ï¿½ï¿½ï¿½ï¿½id
 
 	ShaderProgram(const std::string vertexCode, const std::string fragmentCode) {
 		const char* vShaderCode = vertexCode.c_str();
@@ -70,7 +68,7 @@ public:
 	void use() {
 		glUseProgram(ID);
 	};
-	// utility uniform functions ´«µÝuniformµÄ¹¤¾ßÀà
+	// utility uniform functions ï¿½ï¿½ï¿½ï¿½uniformï¿½Ä¹ï¿½ï¿½ï¿½ï¿½ï¿½
 	// ------------------------------------------------------------------------
 	void setBool(const std::string &name, bool value) const
 	{
@@ -87,7 +85,7 @@ public:
 		glUniform1f(glGetUniformLocation(ID, name.c_str()), value);
 	}
 private:
-	// utility function for checking shader compilation/linking errors.ÅÐ¶ÏÊÇ·ñÓÐ´íÎó²¢Êä³ö´íÎó
+	// utility function for checking shader compilation/linking errors.ï¿½Ð¶ï¿½ï¿½Ç·ï¿½ï¿½Ð´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	// ------------------------------------------------------------------------
 	void checkCompileErrors(unsigned int shader, std::string type)
 	{

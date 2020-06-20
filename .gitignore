@@ -1,6 +1,4 @@
 # http://www.gnu.org/software/automake
-/include
-/lib
 /x64
 /Debug
 /.vscode
