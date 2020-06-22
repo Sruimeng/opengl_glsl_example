@@ -23,3 +23,4 @@ set( CMAKE_CXX_FLAGS "-std=c++11" )
 
 add_subdirectory(glsl1)
 
+add_subdirectory(offscreen)

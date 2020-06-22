@@ -1,7 +1,6 @@
 # http://www.gnu.org/software/automake
 /x64
 /Debug
-/.vscode
 /build
 *.sln
 *.db
