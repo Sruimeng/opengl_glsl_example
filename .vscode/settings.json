@@ -1,8 +1,10 @@
 {
     "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
     "editor.fontSize": 18,
-    "editor.fontWeight": "100",
+    "editor.fontWeight": "bold",
     "files.associations": {
         "fstream": "cpp"
-    }
+    },
+    "terminal.integrated.fontWeight": "bold",
+    "C_Cpp.errorSquiggles": "Disabled"
 }
