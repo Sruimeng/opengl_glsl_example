@@ -4,4 +4,4 @@ message(${DIR_LIB_SRCS})
 
 add_executable(glsl1 glad.c main.cpp)
 
-target_link_libraries(glsl1 glfw3 ${OPENGL_LIBRARIES} ${CMAKE_DL_LIBS} )
+target_link_libraries(glsl1 glfw ${OPENGL_LIBRARIES} glad ${CMAKE_DL_LIBS} )
