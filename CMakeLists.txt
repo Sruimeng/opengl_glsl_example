@@ -22,3 +22,9 @@ set( CMAKE_CXX_FLAGS "-std=c++11" )
 # 并将名称保存到 DIR_SRCS 变量
 
 add_subdirectory(glsl1)
+
+
+add_subdirectory(glsl2)
+
+
+add_subdirectory(glsl3)
