@@ -28,3 +28,7 @@ add_subdirectory(glsl2)
 
 
 add_subdirectory(glsl3)
+add_subdirectory(glsl4)
+add_subdirectory(glsl5)
+add_subdirectory(glsl6)
+add_subdirectory(glsl7)
