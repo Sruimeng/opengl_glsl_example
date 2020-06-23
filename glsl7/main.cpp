@@ -20,18 +20,18 @@ namespace {
 
 	void processInput(GLFWwindow *window)
 	{
-		//°´escÍË³ö
+		//ï¿½ï¿½escï¿½Ë³ï¿½
 		if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
 			glfwSetWindowShouldClose(window, true);
 	}
 
 	void openglInit(int major, int minor) {
-		//glfw³õÊ¼»¯
+		//glfwï¿½ï¿½Ê¼ï¿½ï¿½
 		glfwInit();
-		//ÏÂÃæÁ½¾äÊÇÉèÖÃ°æ±¾£¬GLFW_CONTEXT_VERSION_MAJOR->Ö÷°æ±¾ GLFW_CONTEXT_VERSION_MINOR->Ð¡°æ±¾
+		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã°æ±¾ï¿½ï¿½GLFW_CONTEXT_VERSION_MAJOR->ï¿½ï¿½ï¿½æ±¾ GLFW_CONTEXT_VERSION_MINOR->Ð¡ï¿½æ±¾
 		glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, major);
 		glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, minor);
-		//ÉèÖÃÊ¹ÓÃºËÐÄÄ£Ê½
+		//ï¿½ï¿½ï¿½ï¿½Ê¹ï¿½Ãºï¿½ï¿½ï¿½Ä£Ê½
 		glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 #ifdef __APPLE__
 		glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
@@ -45,55 +45,55 @@ int main()
 	openglInit(4, 3);
 	
 	//glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
-	//´´½¨´°¿Ú
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	GLFWwindow* window = glfwCreateWindow(1000, 800, "glsl2", NULL, NULL);
-	//ÉèÖÃµ±Ç°´°¿ÚµÄÉÏÏÂÎÄ
+	//ï¿½ï¿½ï¿½Ãµï¿½Ç°ï¿½ï¿½ï¿½Úµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	glfwMakeContextCurrent(window);
-	//glad³õÊ¼»¯
+	//gladï¿½ï¿½Ê¼ï¿½ï¿½
 	if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
 	{
 		std::cout << "Failed to initialize GLAD" << std::endl;
 		return -1;
 	}
-	//ÅÐ¶Ï´°¿Ú
+	//ï¿½Ð¶Ï´ï¿½ï¿½ï¿½
 	if (window == NULL)
 	{
 		std::cout << "Failed to create GLFW window" << std::endl;
 		glfwTerminate();
 		return -1;
 	}
-	//ÉèÖÃÊÓµã
+	//ï¿½ï¿½ï¿½ï¿½ï¿½Óµï¿½
 	glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
-	////Èý½ÇÐÎ¶¥µãÊý×é
+	////ï¿½ï¿½ï¿½ï¿½ï¿½Î¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	//float vertices[] = {
 	//	-0.5f, -0.5f, 0.0f,
 	//	0.5f, -0.5f, 0.0f,
 	//	0.0f,  0.5f, 0.0f
 	//};
-	////Á½¸öÈý½ÇÐÎ ÆÕÍ¨äÖÈ¾·½Ê½
+	////ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Í¨ï¿½ï¿½È¾ï¿½ï¿½Ê½
 	//float vertices[] = {
-	//	// µÚÒ»¸öÈý½ÇÐÎ
-	//	0.5f, 0.5f, 0.0f,   // ÓÒÉÏ½Ç
-	//	0.5f, -0.5f, 0.0f,  // ÓÒÏÂ½Ç
-	//	-0.5f, 0.5f, 0.0f,  // ×óÉÏ½Ç
-	//	// µÚ¶þ¸öÈý½ÇÐÎ
-	//	0.5f, -0.5f, 0.0f,  // ÓÒÏÂ½Ç
-	//	-0.5f, -0.5f, 0.0f, // ×óÏÂ½Ç
-	//	-0.5f, 0.5f, 0.0f   // ×óÉÏ½Ç
+	//	// ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	//	0.5f, 0.5f, 0.0f,   // ï¿½ï¿½ï¿½Ï½ï¿½
+	//	0.5f, -0.5f, 0.0f,  // ï¿½ï¿½ï¿½Â½ï¿½
+	//	-0.5f, 0.5f, 0.0f,  // ï¿½ï¿½ï¿½Ï½ï¿½
+	//	// ï¿½Ú¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	//	0.5f, -0.5f, 0.0f,  // ï¿½ï¿½ï¿½Â½ï¿½
+	//	-0.5f, -0.5f, 0.0f, // ï¿½ï¿½ï¿½Â½ï¿½
+	//	-0.5f, 0.5f, 0.0f   // ï¿½ï¿½ï¿½Ï½ï¿½
 	//};
 	
-	unsigned int indices[] = { // ×¢ÒâË÷Òý´Ó0¿ªÊ¼! 
-		0, 1, 2 // µÚÒ»¸öÈý½ÇÐÎ
+	unsigned int indices[] = { // ×¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½0ï¿½ï¿½Ê¼! 
+		0, 1, 2 // ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	};
 	float vertices[] = {
-		0.0f, 0.7f, 0.0f,   // ÓÒÉÏ½Ç
-		-0.7f, -0.7f, 0.0f,  // ÓÒÏÂ½Ç
-		0.7f, -0.7f, 0.0f, // ×óÏÂ½Ç
+		0.0f, 0.7f, 0.0f,   // ï¿½ï¿½ï¿½Ï½ï¿½
+		-0.7f, -0.7f, 0.0f,  // ï¿½ï¿½ï¿½Â½ï¿½
+		0.7f, -0.7f, 0.0f, // ï¿½ï¿½ï¿½Â½ï¿½
 	};
 	float colors[] = {
-		1.0f, 0.0f, 0.0f,   // ÓÒÉÏ½Ç
-		0.0f,0.0f, 1.0f,  // ÓÒÏÂ½Ç
-		0.0f, 1.0f, 0.0f,  // ×óÏÂ½Ç
+		1.0f, 0.0f, 0.0f,   // ï¿½ï¿½ï¿½Ï½ï¿½
+		0.0f,0.0f, 1.0f,  // ï¿½ï¿½ï¿½Â½ï¿½
+		0.0f, 1.0f, 0.0f,  // ï¿½ï¿½ï¿½Â½ï¿½
 	};
 
 	float quadVertices[] = { // vertex attributes for a quad that fills the entire screen in Normalized Device Coordinates.
@@ -126,15 +126,15 @@ int main()
 
 
 
-	//´´½¨vbo
+	//ï¿½ï¿½ï¿½ï¿½vbo
 	unsigned int VBO[2];
 	glGenBuffers(2, VBO);
-	//ÐÂ½¨vao
+	//ï¿½Â½ï¿½vao
 	unsigned int VAO;
 	glGenVertexArrays(1, &VAO);
-	//°ó¶¨VAO
+	//ï¿½ï¿½VAO
 	glBindVertexArray(VAO);
-	//°ó¶¨vbo ×¢ÒâË³Ðò
+	//ï¿½ï¿½vbo ×¢ï¿½ï¿½Ë³ï¿½ï¿½
 	glBindBuffer(GL_ARRAY_BUFFER, VBO[0]);
 	glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
 	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
@@ -143,25 +143,25 @@ int main()
 	glBufferData(GL_ARRAY_BUFFER, sizeof(colors), colors, GL_STATIC_DRAW);
 	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
 	glEnableVertexAttribArray(1);
-	//°ó¶¨Êý¾Ý
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	
 
-	//ÀûÓÃebo»æÖÆÈý½ÇÐÎ
+	//ï¿½ï¿½ï¿½ï¿½eboï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	{
-		//´´½¨ebo 
+		//ï¿½ï¿½ï¿½ï¿½ebo 
 		unsigned int EBO;
 		glGenBuffers(1, &EBO);
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
 		glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
 	}
-	//ÉèÖÃ¶¥µãÊôÐÔµÄÖ¸Õë
-	Shader fsShader("shader.fs");
-	Shader vsShader("shader.vs");
+	//ï¿½ï¿½ï¿½Ã¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ôµï¿½Ö¸ï¿½ï¿½
+	Shader fsShader("../../glsl7/shader.fs");
+	Shader vsShader("../../glsl7/shader.vs");
 	ShaderProgram shaderProgram(vsShader.code, fsShader.code);
 	shaderProgram.use();
 
-	Shader ffsShader("screen.fs");
-	Shader fvsShader("screen.vs");
+	Shader ffsShader("../../glsl7/screen.fs");
+	Shader fvsShader("../../glsl7/screen.vs");
 	ShaderProgram fshaderProgram(fvsShader.code, ffsShader.code);
 	fshaderProgram.use();
 	fshaderProgram.setInt("screenTexture", 0);
@@ -191,7 +191,7 @@ int main()
 	// draw as wireframe
 	//glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 
-	//Ñ­»·äÖÈ¾
+	//Ñ­ï¿½ï¿½ï¿½ï¿½È¾
 	while (!glfwWindowShouldClose(window))
 	{
 		processInput(window);
@@ -220,12 +220,12 @@ int main()
 		glBindVertexArray(quadVAO);
 		glBindTexture(GL_TEXTURE_2D, textureColorbuffer);	// use the color attachment texture as the texture of the quad plane
 		glDrawArrays(GL_TRIANGLES, 0, 6);
-		//½»»»»º´æ
+		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		glfwSwapBuffers(window);
-		//ÊÂ¼þÂÖÑ¯
+		//ï¿½Â¼ï¿½ï¿½ï¿½Ñ¯
 		glfwPollEvents();
 	}
-	//ÖÕÖ¹glfw
+	//ï¿½ï¿½Ö¹glfw
 	glfwTerminate();
 	return 0;
 }
