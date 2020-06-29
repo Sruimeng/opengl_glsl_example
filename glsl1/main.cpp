@@ -6,7 +6,7 @@
 #include <iostream>
 
 #if defined(_WIN32)
-#pragma comment(lib,"../lib64/glfw3.lib")
+#pragma comment(lib,"../lib64/glfw3.lib") 
 #endif
 
 #define GET_ARRAY_SIZE(array,length){length = (sizeof(array) / sizeof(array[0]));}

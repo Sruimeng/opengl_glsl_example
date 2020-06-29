@@ -1,10 +1,12 @@
 cmake_minimum_required(VERSION 3.0.0)
 project(glsl_example VERSION 0.1.0)
 
+set(INCLUDE_DIR ${PROJECT_SOURCE_DIR}/include)
+include_directories(${INCLUDE_DIR})
 
-set(LINK_DIR ${PROJECT_SOURCE_DIR}/lib64)
-link_directories(${LINK_DIR})
-link_libraries(glfw)
+#set(LINK_DIR ${PROJECT_SOURCE_DIR}/lib64)
+#link_directories(${LINK_DIR})
+#link_libraries(glfw)
 # FIND OPENGL
 #########################################################
 find_package(OpenGL REQUIRED)
@@ -24,11 +26,11 @@ set( CMAKE_CXX_FLAGS "-std=c++11" )
 add_subdirectory(glsl1)
 
 
-add_subdirectory(glsl2)
+# add_subdirectory(glsl2)
 
 
-add_subdirectory(glsl3)
-add_subdirectory(glsl4)
-add_subdirectory(glsl5)
-add_subdirectory(glsl6)
-add_subdirectory(glsl7)
+# add_subdirectory(glsl3)
+# add_subdirectory(glsl4)
+# add_subdirectory(glsl5)
+# add_subdirectory(glsl6)
+# add_subdirectory(glsl7)
