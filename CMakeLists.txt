@@ -4,6 +4,7 @@ project(glsl_example VERSION 0.1.0)
 set(INCLUDE_DIR ${PROJECT_SOURCE_DIR}/include)
 include_directories(${INCLUDE_DIR})
 
+set(LIB_DIR ${PROJECT_SOURCE_DIR}/lib)
 #set(LINK_DIR ${PROJECT_SOURCE_DIR}/lib64)
 #link_directories(${LINK_DIR})
 #link_libraries(glfw)
@@ -22,6 +23,7 @@ set( CMAKE_CXX_FLAGS "-std=c++11" )
 # 查找当前目录下的所有源文件
 
 # 并将名称保存到 DIR_SRCS 变量
+add_subdirectory(support)
 
 add_subdirectory(glsl1)
 
