@@ -85,7 +85,10 @@ GLAPI struct gladGLversionStruct GLVersion;
 GLAPI int gladLoadGL(void);
 
 GLAPI int gladLoadGLLoader(GLADloadproc);
+<<<<<<< HEAD
 
+=======
+>>>>>>> 4b7daa0346549815b676bf686d26bdf02271dcd3
 #include "../KHR/khrplatform.h"
 typedef unsigned int GLenum;
 typedef unsigned char GLboolean;
