@@ -4,11 +4,8 @@ project(glsl_example VERSION 0.1.0)
 set(INCLUDE_DIR ${PROJECT_SOURCE_DIR}/include)
 include_directories(${INCLUDE_DIR})
 
-set(LIB_DIR ${PROJECT_SOURCE_DIR}/lib)
-#set(LINK_DIR ${PROJECT_SOURCE_DIR}/lib64)
-#link_directories(${LINK_DIR})
-#link_libraries(glfw)
-# FIND OPENGL
+set(LINK_DIR ${PROJECT_SOURCE_DIR}/lib64)
+link_directories(${LINK_DIR})
 #########################################################
 find_package(OpenGL REQUIRED)
 include_directories(${OpenGL_INCLUDE_DIRS})
@@ -17,10 +14,6 @@ add_definitions(${OpenGL_DEFINITIONS})
 if(NOT OPENGL_FOUND)
     message(ERROR " OPENGL not found!")
 endif(NOT OPENGL_FOUND)
-
-#find_package(glfw3 REQUIRED)
-set( CMAKE_CXX_FLAGS "-std=c++11" )
-# 查找当前目录下的所有源文件
 
 # 并将名称保存到 DIR_SRCS 变量
 add_subdirectory(support)

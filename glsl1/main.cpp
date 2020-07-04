@@ -1,10 +1,10 @@
 #include "Shader.h"
 
 #include "../support/glad/glad.h"
-#include "../support/GLFW/include/GLFW/glfw3.h"
+#include "GLFW/glfw3.h"
 
 #include <iostream>
-
+#pragma comment(lib, "../lib64/glfw3.lib")
 #define GET_ARRAY_SIZE(array,length){length = (sizeof(array) / sizeof(array[0]));}
 
 namespace {
@@ -150,13 +150,13 @@ int main()
 		glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
 	}
 	//���ö������Ե�ָ��
-	Shader fsShader("glsl1/shader.fs");
-	Shader vsShader("glsl1/shader.vs");
+	Shader fsShader("../../../glsl1/shader.fs");
+	Shader vsShader("../../../glsl1/shader.vs");
 	ShaderProgram shaderProgram(vsShader.code, fsShader.code);
 	shaderProgram.use();
 
-	Shader ffsShader("glsl1/screen.fs");
-	Shader fvsShader("glsl1/screen.vs");
+	Shader ffsShader("../../../glsl1/screen.fs");
+	Shader fvsShader("../../../glsl1/screen.vs");
 	ShaderProgram fshaderProgram(fvsShader.code, ffsShader.code);
 	fshaderProgram.use();
 	fshaderProgram.setInt("screenTexture", 0);
