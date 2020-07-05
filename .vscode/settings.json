@@ -1,5 +1,4 @@
 {
-    "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
     "editor.fontSize": 18,
     "editor.fontWeight": "bold",
     "files.associations": {

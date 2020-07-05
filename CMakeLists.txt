@@ -15,9 +15,9 @@ if(NOT OPENGL_FOUND)
     message(ERROR " OPENGL not found!")
 endif(NOT OPENGL_FOUND)
 
-# 并将名称保存到 DIR_SRCS 变量
-add_subdirectory(support)
 
+add_subdirectory(support)
+add_subdirectory(toyUtil)
 add_subdirectory(glsl1)
 
 

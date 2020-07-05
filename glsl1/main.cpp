@@ -149,7 +149,7 @@ int main()
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
 		glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
 	}
-	//���ö������Ե�ָ��
+	//shader的文件导入
 	Shader fsShader("../../../glsl1/shader.fs");
 	Shader vsShader("../../../glsl1/shader.vs");
 	ShaderProgram shaderProgram(vsShader.code, fsShader.code);
@@ -186,7 +186,7 @@ int main()
 	// draw as wireframe
 	//glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 
-	//ѭ����Ⱦ
+	//渲染
 	while (!glfwWindowShouldClose(window))
 	{
 		processInput(window);
@@ -215,12 +215,12 @@ int main()
 		glBindVertexArray(quadVAO);
 		glBindTexture(GL_TEXTURE_2D, textureColorbuffer);	// use the color attachment texture as the texture of the quad plane
 		glDrawArrays(GL_TRIANGLES, 0, 6);
-		//��������
+		//交换缓存
 		glfwSwapBuffers(window);
 		//�¼���ѯ
 		glfwPollEvents();
 	}
-	//��ֹglfw
+	//关闭glfw
 	glfwTerminate();
 	return 0;
 }

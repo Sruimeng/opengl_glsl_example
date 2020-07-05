@@ -1,6 +1,6 @@
 #pragma once
 
-namespace uautil {
+namespace toyUtil {
 	struct int3
 	{
 		int x, y, z;
