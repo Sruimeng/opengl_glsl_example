@@ -1,5 +1,5 @@
 #pragma once
-#include "vector_type.h"
+#include "vector.h"
 
 #define MAT_DECL template <unsigned int M, unsigned int N>
 
