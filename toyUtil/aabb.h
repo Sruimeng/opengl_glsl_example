@@ -1,7 +1,7 @@
 #pragma once
 #include "vector.h"
 
-namespace toyUtil {
+namespace toy {
 	class Aabb
 	{
 	public:

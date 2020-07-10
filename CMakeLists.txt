@@ -15,7 +15,6 @@ if(NOT OPENGL_FOUND)
     message(ERROR " OPENGL not found!")
 endif(NOT OPENGL_FOUND)
 
-
 add_subdirectory(support)
 add_subdirectory(toyUtil)
 add_subdirectory(glsl1)

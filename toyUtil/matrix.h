@@ -3,7 +3,7 @@
 
 #define MAT_DECL template <unsigned int M, unsigned int N>
 
-namespace toyUtil {
+namespace toy {
 
 	template <unsigned int TYPE> struct VectorType{};
 

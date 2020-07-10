@@ -4,7 +4,6 @@
 #include "GLFW/glfw3.h"
 
 #include <iostream>
-#pragma comment(lib, "../lib64/glfw3.lib")
 #define GET_ARRAY_SIZE(array,length){length = (sizeof(array) / sizeof(array[0]));}
 
 namespace {
@@ -37,7 +36,8 @@ namespace {
 
 int main()
 {
-	//opengl 初始化
+
+	////opengl 初始化
 	openglInit(4, 3);
 	
 	//新建窗口
