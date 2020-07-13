@@ -18,8 +18,8 @@ namespace toy {
 		std::vector<float2> texcoordsArray; //UV0通道数组
 
 		std::string                       name;
-		Matrix4x4 transform;
-		std::vector<int32_t>              material_idx;
+		Matrix4x4 transform;				//矩阵
+		std::vector<int32_t>              material_idx;//使用的材质iD
 		int32_t             num_triangles;  // Number of triangles
 		int32_t             num_vertices;   // Number of triangle vertices
 		Aabb                              object_aabb;
@@ -29,8 +29,14 @@ namespace toy {
 	class Scene
 	{
 	public:
-
-		
+		void addCamera(const Camera& camera) { m_cameras.push_back(camera) };
+		void addMesh(const Mesh& mesh) {
+			m_meshes.push_back(mesh);
+			m_num_meshes++;
+		};
+		void addBuffer(const void* data) {
+			m_data = data;
+		};
 	private:
 		std::vector<unsigned char>			m_data;
 		std::vector<Mesh>   m_meshes;

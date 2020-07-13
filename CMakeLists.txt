@@ -16,7 +16,7 @@ if(NOT OPENGL_FOUND)
 endif(NOT OPENGL_FOUND)
 
 add_subdirectory(support)
-add_subdirectory(toyUtil)
+add_subdirectory(toy)
 add_subdirectory(glsl1)
 
 
