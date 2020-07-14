@@ -35,7 +35,7 @@ namespace toy {
 
 			scene.addBuffer(gltf_buffer.data.data());
 		}
-
+		//
 
 	};
 }

@@ -7,7 +7,6 @@
 #include "aabb.h"
 #include "matrix.h"
 #include "camera.h"
-using namespace optix;
 namespace toy {
 
 	struct Mesh
@@ -34,7 +33,7 @@ namespace toy {
 			m_meshes.push_back(mesh);
 			m_num_meshes++;
 		};
-		void addBuffer(const void* data) {
+		void addBuffer(const std::vector<unsigned char> data) {
 			m_data = data;
 		};
 	private:
