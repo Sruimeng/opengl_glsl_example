@@ -1,3 +1,11 @@
+#include <iostream>
+#include "scene.h"
+namespace toy {
+	void loadScene(const std::string& filename, Scene* scene) {
+		
+	}
+}
+
 //
 //
 //
