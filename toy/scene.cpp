@@ -1,3 +1,15 @@
+#pragma once;
+#include "scene.h"
+namespace toy {
+	void loadScene(const std::string& filename, Scene* scene) {
+		const std::string model_type = filename.substr(filename.find_last_of('.') + 1);
+		if (model_type == "glb" || model_type == "gltf") {
+			void loadGLTF(const std::string & filename, Scene & scene, const std::string & model_type);
+		}
+
+	};
+}
+
 //
 //
 //

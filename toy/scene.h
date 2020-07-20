@@ -44,7 +44,7 @@ namespace toy {
 		Aabb                          m_scene_aabb;
 	
 	};
-	
+	void loadGLTF(const std::string& filename, Scene& scene, const std::string& model_type);
 	void loadScene(const std::string& filename, Scene* scene);
 }
 
