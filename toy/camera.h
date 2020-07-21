@@ -7,7 +7,7 @@ namespace toy {
         //默认参数的相机
         Camera();
         Camera(const float3& eye, const float3& lookat, const float3& up, float fovY, float aspectRatio);
-        void UVWFrame(float3& U, float3& V, float3& W) const
+        void UVWFrame(float3& U, float3& V, float3& W);
     private:
         float3 m_eye;
         float3 m_lookat;
@@ -32,7 +32,7 @@ namespace toy {
         m_aspectRatio = aspectRatio;
     }
 
-    Camera::UVWFrame(float3& U, float3& V, float3& W) {
+    void Camera::UVWFrame(float3& U, float3& V, float3& W) {
         W = m_lookat - m_eye; // Do not normalize W -- it implies focal length
         float wlen = length(W);
         U = normalize(cross(W, m_up));

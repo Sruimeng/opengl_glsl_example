@@ -8,7 +8,7 @@ namespace toy {
 		Aabb();
 
 		//通过包围盒最大值和最小值
-		Aabb(const flost3& min, const float3& max);
+		Aabb(const float3& min, const float3& max);
 
 		bool operator==(const Aabb& another) const;
 
@@ -28,11 +28,11 @@ namespace toy {
 		invalidate();
 	}
 
-	inline Aabb::Aabb(const flost3& min, const float3& max) {
+	inline Aabb::Aabb(const float3& min, const float3& max) {
 		set(min, max);
 	}
 
-	inline Aabb::invalidate() {
+	inline void Aabb::invalidate() {
 		m_min = make_float3(1e37f);
 		m_max = make_float3(-1e37f);
 	}
@@ -46,7 +46,7 @@ namespace toy {
 			m_max.z == another.m_max.z;
 	}
 
-	inline Aabb::set(const float3& min, const float3& max) {
+	inline void Aabb::set(const float3& min, const float3& max) {
 		m_min = min;
 		m_max = max;
 	}

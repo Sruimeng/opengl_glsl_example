@@ -2,7 +2,7 @@
 
 #include "../support/glad/glad.h"
 #include "GLFW/glfw3.h"
-
+#include "../toy/scene.h"
 #include <iostream>
 #define GET_ARRAY_SIZE(array,length){length = (sizeof(array) / sizeof(array[0]));}
 
@@ -37,6 +37,10 @@ namespace {
 int main()
 {
 
+	const std::string filename = "D:/project/atlas/models/";
+	std::string gltfFilename = filename + "/199.glb";
+	toy::Scene scene;
+	scene.loadScene(gltfFilename, &scene);
 	////opengl 初始化
 	openglInit(4, 3);
 	

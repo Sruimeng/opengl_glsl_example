@@ -28,7 +28,7 @@ namespace toy {
 	class Scene
 	{
 	public:
-		void addCamera(const Camera& camera) { m_cameras.push_back(camera) };
+		void addCamera(const Camera& camera) { m_cameras.push_back(camera); };
 		void addMesh(const Mesh& mesh) {
 			m_meshes.push_back(mesh);
 			m_num_meshes++;
@@ -36,16 +36,17 @@ namespace toy {
 		void addBuffer(const std::vector<unsigned char> data) {
 			m_data = data;
 		};
+		void loadScene(const std::string& filename, Scene* scene);
 	private:
 		std::vector<unsigned char>			m_data;
 		std::vector<Mesh>   m_meshes;
 		std::vector<Camera> m_cameras;
 		std::size_t				 m_num_meshes;
 		Aabb                          m_scene_aabb;
-	
+
 	};
 	void loadGLTF(const std::string& filename, Scene& scene, const std::string& model_type);
-	void loadScene(const std::string& filename, Scene* scene);
+	
 }
 
 
