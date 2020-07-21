@@ -15,6 +15,8 @@ namespace toy {
 	public:
 		typedef typename VectorType<M>::Vector floatM;//аа
 		typedef typename VectorType<N>::Vector floatN;//Са
+		//жиди
+		inline float operator[](unsigned int i)const { return m_elements[i]; }
 
 		Matrix();
 
