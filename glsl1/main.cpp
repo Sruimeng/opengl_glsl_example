@@ -12,7 +12,7 @@ namespace {
 		glViewport(0, 0, width, height);
 	}
 
-	void processInput(GLFWwindow *window)
+	void processInput(GLFWwindow* window)
 	{
 		//��esc�˳�
 		if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
@@ -40,10 +40,12 @@ int main()
 	const std::string filename = "D:/project/atlas/models/";
 	std::string gltfFilename = filename + "/199.glb";
 	toy::Scene scene;
-	scene.loadScene(gltfFilename, &scene);
+	toy::loadScene(gltfFilename, &scene);
+	toy::Camera camera;
+
 	////opengl 初始化
 	openglInit(4, 3);
-	
+
 	//新建窗口
 	GLFWwindow* window = glfwCreateWindow(1000, 800, "glsl example", NULL, NULL);
 	//创建上下文
@@ -80,7 +82,7 @@ int main()
 	//	-0.5f, -0.5f, 0.0f, // ���½�
 	//	-0.5f, 0.5f, 0.0f   // ���Ͻ�
 	//};
-	
+
 	unsigned int indices[] = { // ע��������0��ʼ! 
 		0, 1, 2 // ��һ��������
 	};
@@ -143,7 +145,7 @@ int main()
 	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
 	glEnableVertexAttribArray(1);
 	//������
-	
+
 
 	//����ebo����������
 	{
@@ -211,7 +213,7 @@ int main()
 		// now bind back to default framebuffer and draw a quad plane with the attached framebuffer color texture
 		glBindFramebuffer(GL_FRAMEBUFFER, 0);
 		glDisable(GL_DEPTH_TEST); // disable depth test so screen-space quad isn't discarded due
-		
+
 		fshaderProgram.use();
 		// clear all relevant buffers
 		glClearColor(0.0f, 0.0f, 0.0f, 1.0f); // set clear color to white (not really necessery actually, since we won't be able to see behind the quad anyways)

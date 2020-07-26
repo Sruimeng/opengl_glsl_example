@@ -19,6 +19,6 @@ if( WARNINGS_AS_ERRORS AND (USING_GNU_CXX OR USING_CLANG_CXX))
   pop_variable( CMAKE_C_FLAGS )
 endif()
 add_subdirectory( glad )
-
+add_subdirectory(tojpg)
 
 # Set IDE folders for targets

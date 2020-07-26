@@ -36,7 +36,7 @@ namespace toy {
 		void addBuffer(const std::vector<unsigned char> data) {
 			m_data = data;
 		};
-		void loadScene(const std::string& filename, Scene* scene);
+		
 	private:
 		std::vector<unsigned char>			m_data;
 		std::vector<Mesh>   m_meshes;
@@ -45,6 +45,7 @@ namespace toy {
 		Aabb                          m_scene_aabb;
 
 	};
+	void loadScene(const std::string& filename, Scene* scene);
 	void loadGLTF(const std::string& filename, Scene& scene, const std::string& model_type);
 	
 }
