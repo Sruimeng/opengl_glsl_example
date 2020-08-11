@@ -165,7 +165,7 @@ int main()
 	Shader fvsShader("../../../glsl1/screen.vs");
 	ShaderProgram fshaderProgram(fvsShader.code, ffsShader.code);
 	fshaderProgram.use();
-	glUniform1i(glGetUniformLocation(fshaderProgram.ID, "uv"), 1);
+	//glUniform1i(glGetUniformLocation(fshaderProgram.ID, "uv"), 1);
 	fshaderProgram.setInt("screenTexture", 0);
 	// framebuffer configuration
 	// -------------------------
