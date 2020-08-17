@@ -46,7 +46,7 @@ namespace {
 		for (iy = 0; iy <= heightSegments; iy++)
 		{
 			std::vector<int> verticesRow;
-			int v = iy / (float)heightSegments;
+			auto v = iy / (float)heightSegments;
 			int uOffset = 0;
 
 			if (iy == 0) {
@@ -72,7 +72,7 @@ namespace {
 				mesh->verticesArray.push_back(vertex);
 
 				toy::float3 normal;
-				auto temp = uautil::normalize(vertex);
+				auto temp = toy::normalize(vertex);
 				normal.x = -temp.x;
 				normal.y = -temp.y;
 				normal.z = -temp.z;
@@ -117,7 +117,8 @@ int main()
 	toy::Scene scene;
 	toy::loadScene(gltfFilename, &scene);
 	toy::Camera camera;
-
+	toy::Mesh mesh;
+	create_sphere(1, 32, 32, &mesh);
 	////opengl 初始化
 	openglInit(4, 3);
 
@@ -158,19 +159,34 @@ int main()
 	//	-0.5f, 0.5f, 0.0f   // ���Ͻ�
 	//};
 
-	unsigned int indices[] = { // ע��������0��ʼ! 
-		0, 1, 2 // ��һ��������
-	};
-	float vertices[] = {
-		0.0f, 0.7f, 0.0f,   // ���Ͻ�
-		-0.7f, -0.7f, 0.0f,  // ���½�
-		0.7f, -0.7f, 0.0f, // ���½�
-	};
-	float colors[] = {
-		1.0f, 0.0f, 0.0f,   // ���Ͻ�
-		0.0f,0.0f, 1.0f,  // ���½�
-		0.0f, 1.0f, 0.0f,  // ���½�
-	};
+	//unsigned int indices[] = { // ע��������0��ʼ! 
+	//	0, 1, 2 // ��һ��������
+	//};
+	std::vector<float> vertices;
+	std::vector<int> indices;
+	for (size_t i = 0; i < mesh.verticesArray.size(); i++)
+	{
+		vertices.push_back(mesh.verticesArray[i].x);
+		vertices.push_back(mesh.verticesArray[i].y);
+		vertices.push_back(mesh.verticesArray[i].z);
+	}
+	for (size_t i = 0; i < mesh.indicesArray.size(); i++)
+	{
+		indices.push_back(mesh.indicesArray[i].x);
+		indices.push_back(mesh.indicesArray[i].y);
+		indices.push_back(mesh.indicesArray[i].z);
+	}
+
+	//float vertices[] = {
+	//	0.0f, 0.7f, 0.0f,   // ���Ͻ�
+	//	-0.7f, -0.7f, 0.0f,  // ���½�
+	//	0.7f, -0.7f, 0.0f, // ���½�
+	//};
+	//float colors[] = {
+	//	1.0f, 0.0f, 0.0f,   // ���Ͻ�
+	//	0.0f,0.0f, 1.0f,  // ���½�
+	//	0.0f, 1.0f, 0.0f,  // ���½�
+	//};
 
 	float quadVertices[] = { // vertex attributes for a quad that fills the entire screen in Normalized Device Coordinates.
 							 // positions   // texCoords
@@ -212,13 +228,9 @@ int main()
 	glBindVertexArray(VAO);
 	//��vbo ע��˳��
 	glBindBuffer(GL_ARRAY_BUFFER, VBO[0]);
-	glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
+	glBufferData(GL_ARRAY_BUFFER, vertices.size() * sizeof(float), &vertices[0], GL_STATIC_DRAW);
 	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
 	glEnableVertexAttribArray(0);
-	glBindBuffer(GL_ARRAY_BUFFER, VBO[1]);
-	glBufferData(GL_ARRAY_BUFFER, sizeof(colors), colors, GL_STATIC_DRAW);
-	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
-	glEnableVertexAttribArray(1);
 	//������
 
 
@@ -228,7 +240,7 @@ int main()
 		unsigned int EBO;
 		glGenBuffers(1, &EBO);
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
-		glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
+		glBufferData(GL_ELEMENT_ARRAY_BUFFER, indices.size() * sizeof(int), &indices[0], GL_STATIC_DRAW);
 	}
 	//shader的文件导入
 	Shader fsShader("../../../glsl1/shader.fs");
@@ -275,7 +287,7 @@ int main()
 		// render
 		// ------
 		// bind to framebuffer and draw scene as we normally would to color texture 
-		glBindFramebuffer(GL_FRAMEBUFFER, framebuffer);
+		//glBindFramebuffer(GL_FRAMEBUFFER, framebuffer);
 		glEnable(GL_DEPTH_TEST); // enable depth testing (is disabled for rendering screen-space quad)
 
 								 // make sure we clear the framebuffer's content
@@ -283,20 +295,20 @@ int main()
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 		shaderProgram.use();
 		glBindVertexArray(VAO);
-		glDrawArrays(GL_TRIANGLES, 0, 3);
+		glDrawArrays(GL_TRIANGLES, 0,600);
 		glBindVertexArray(0);
 
 		// now bind back to default framebuffer and draw a quad plane with the attached framebuffer color texture
-		glBindFramebuffer(GL_FRAMEBUFFER, 0);
+		//glBindFramebuffer(GL_FRAMEBUFFER, 0);
 		glDisable(GL_DEPTH_TEST); // disable depth test so screen-space quad isn't discarded due
 
-		fshaderProgram.use();
-		// clear all relevant buffers
-		glClearColor(0.0f, 0.0f, 0.0f, 1.0f); // set clear color to white (not really necessery actually, since we won't be able to see behind the quad anyways)
-		glClear(GL_COLOR_BUFFER_BIT);
-		glBindVertexArray(quadVAO);
-		glBindTexture(GL_TEXTURE_2D, textureColorbuffer);	// use the color attachment texture as the texture of the quad plane
-		glDrawArrays(GL_TRIANGLES, 0, 6);
+		//fshaderProgram.use();
+		//// clear all relevant buffers
+		//glClearColor(0.0f, 0.0f, 0.0f, 1.0f); // set clear color to white (not really necessery actually, since we won't be able to see behind the quad anyways)
+		//glClear(GL_COLOR_BUFFER_BIT);
+		//glBindVertexArray(quadVAO);
+		//glBindTexture(GL_TEXTURE_2D, textureColorbuffer);	// use the color attachment texture as the texture of the quad plane
+		//glDrawArrays(GL_TRIANGLES, 0, 6);
 		//交换缓存
 		glfwSwapBuffers(window);
 		//�¼���ѯ
