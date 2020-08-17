@@ -5,7 +5,7 @@
 #include "../toy/scene.h"
 #include <iostream>
 #define GET_ARRAY_SIZE(array,length){length = (sizeof(array) / sizeof(array[0]));}
-
+#define PI 3.1415926
 namespace {
 	void framebuffer_size_callback(GLFWwindow* window, int width, int height)
 	{
@@ -31,6 +31,81 @@ namespace {
 		glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
 #endif
 	}
+
+	void create_sphere(int radius, int widthSegments, int heightSegments, toy::Mesh* mesh) {
+		int ix, iy;
+
+		int index = 0;
+		std::vector<std::vector<int>> grid;
+		float phiStart = 0;
+		float phiLength = PI * 2;
+
+		float thetaStart = 0;
+		float thetaLength = PI;
+		float thetaEnd = PI;
+		for (iy = 0; iy <= heightSegments; iy++)
+		{
+			std::vector<int> verticesRow;
+			int v = iy / (float)heightSegments;
+			int uOffset = 0;
+
+			if (iy == 0) {
+
+				uOffset = 0.5 / widthSegments;
+
+			}
+			else if (iy == heightSegments) {
+
+				uOffset = -0.5 / widthSegments;
+
+			}
+
+			for (ix = 0; ix <= widthSegments; ix++) {
+
+				auto u = ix / (float)widthSegments;
+				toy::float3 vertex;
+				auto a = std::cos(phiStart + u * phiLength);
+				auto b = std::sin(thetaStart + v * thetaLength);
+				vertex.x = -radius * std::cos(phiStart + u * phiLength) * std::sin(thetaStart + v * thetaLength);
+				vertex.y = radius * std::cos(thetaStart + v * thetaLength);
+				vertex.z = radius * std::sin(phiStart + u * phiLength) * std::sin(thetaStart + v * thetaLength);
+				mesh->verticesArray.push_back(vertex);
+
+				toy::float3 normal;
+				auto temp = uautil::normalize(vertex);
+				normal.x = -temp.x;
+				normal.y = -temp.y;
+				normal.z = -temp.z;
+				mesh->normalsArray.push_back(normal);
+				verticesRow.push_back(index++);
+			}
+			grid.push_back(verticesRow);
+		}
+		// indices
+
+		for (iy = 0; iy < heightSegments; iy++) {
+
+			for (ix = 0; ix < widthSegments; ix++) {
+
+				int a = grid[iy][ix + 1];
+				int b = grid[iy][ix];
+				int c = grid[iy + 1][ix];
+				int d = grid[iy + 1][ix + 1];
+				toy::int3 index1;
+				index1.x = a;
+				index1.y = b;
+				index1.z = d;
+				toy::int3 index2;
+				index2.x = b;
+				index2.y = c;
+				index2.z = d;
+				if (iy != 0 || thetaStart > 0) mesh->indicesArray.push_back(index1);
+				if (iy != heightSegments - 1 || thetaEnd < PI) mesh->indicesArray.push_back(index2);
+
+			}
+
+		}
+	};
 }
 
 
