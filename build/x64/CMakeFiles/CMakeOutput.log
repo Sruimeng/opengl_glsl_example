@@ -1,6 +1,6 @@
 The system is: Windows - 10.0.18362 - AMD64
 Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
-Compiler: C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.26.28801/bin/HostX64/x64/cl.exe 
+Compiler: D:/software/vs2019/VC/Tools/MSVC/14.26.28801/bin/HostX64/x64/cl.exe 
 Build flags: 
 Id flags:  
 
@@ -21,10 +21,10 @@ Compilation of the C compiler identification source "CMakeCCompilerId.c" produce
 
 Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CMakeCCompilerId.obj"
 
-The C compiler identification is MSVC, found in "F:/project/opengl_glsl_example/build/x64/CMakeFiles/3.17.20032601-MSVC_2/CompilerIdC/CMakeCCompilerId.exe"
+The C compiler identification is MSVC, found in "D:/project/opengl_glsl_example/build/x64/CMakeFiles/3.17.20032601-MSVC_2/CompilerIdC/CMakeCCompilerId.exe"
 
 Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
-Compiler: C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.26.28801/bin/HostX64/x64/cl.exe 
+Compiler: D:/software/vs2019/VC/Tools/MSVC/14.26.28801/bin/HostX64/x64/cl.exe 
 Build flags: 
 Id flags:  
 
@@ -45,37 +45,37 @@ Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" p
 
 Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CMakeCXXCompilerId.obj"
 
-The CXX compiler identification is MSVC, found in "F:/project/opengl_glsl_example/build/x64/CMakeFiles/3.17.20032601-MSVC_2/CompilerIdCXX/CMakeCXXCompilerId.exe"
+The CXX compiler identification is MSVC, found in "D:/project/opengl_glsl_example/build/x64/CMakeFiles/3.17.20032601-MSVC_2/CompilerIdCXX/CMakeCXXCompilerId.exe"
 
 Determining if the C compiler works passed with the following output:
-Change Dir: F:/project/opengl_glsl_example/build/x64/CMakeFiles/CMakeTmp
+Change Dir: D:/project/opengl_glsl_example/build/x64/CMakeFiles/CMakeTmp
 
-Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe cmTC_e1537 && [1/2] Building C object CMakeFiles\cmTC_e1537.dir\testCCompiler.c.obj
-[2/2] Linking C executable cmTC_e1537.exe
+Run Build Command(s):D:\SOFTWARE\VS2019\COMMON7\IDE\COMMONEXTENSIONS\MICROSOFT\CMAKE\Ninja\ninja.exe cmTC_bd59b && [1/2] Building C object CMakeFiles\cmTC_bd59b.dir\testCCompiler.c.obj
+[2/2] Linking C executable cmTC_bd59b.exe
 
 
 
 Detecting C compiler ABI info compiled with the following output:
-Change Dir: F:/project/opengl_glsl_example/build/x64/CMakeFiles/CMakeTmp
+Change Dir: D:/project/opengl_glsl_example/build/x64/CMakeFiles/CMakeTmp
 
-Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe cmTC_9e93a && [1/2] Building C object CMakeFiles\cmTC_9e93a.dir\CMakeCCompilerABI.c.obj
-[2/2] Linking C executable cmTC_9e93a.exe
+Run Build Command(s):D:\SOFTWARE\VS2019\COMMON7\IDE\COMMONEXTENSIONS\MICROSOFT\CMAKE\Ninja\ninja.exe cmTC_b4173 && [1/2] Building C object CMakeFiles\cmTC_b4173.dir\CMakeCCompilerABI.c.obj
+[2/2] Linking C executable cmTC_b4173.exe
 
 
 
 Determining if the CXX compiler works passed with the following output:
-Change Dir: F:/project/opengl_glsl_example/build/x64/CMakeFiles/CMakeTmp
+Change Dir: D:/project/opengl_glsl_example/build/x64/CMakeFiles/CMakeTmp
 
-Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe cmTC_cd178 && [1/2] Building CXX object CMakeFiles\cmTC_cd178.dir\testCXXCompiler.cxx.obj
-[2/2] Linking CXX executable cmTC_cd178.exe
+Run Build Command(s):D:\SOFTWARE\VS2019\COMMON7\IDE\COMMONEXTENSIONS\MICROSOFT\CMAKE\Ninja\ninja.exe cmTC_8e1c1 && [1/2] Building CXX object CMakeFiles\cmTC_8e1c1.dir\testCXXCompiler.cxx.obj
+[2/2] Linking CXX executable cmTC_8e1c1.exe
 
 
 
 Detecting CXX compiler ABI info compiled with the following output:
-Change Dir: F:/project/opengl_glsl_example/build/x64/CMakeFiles/CMakeTmp
+Change Dir: D:/project/opengl_glsl_example/build/x64/CMakeFiles/CMakeTmp
 
-Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe cmTC_a890a && [1/2] Building CXX object CMakeFiles\cmTC_a890a.dir\CMakeCXXCompilerABI.cpp.obj
-[2/2] Linking CXX executable cmTC_a890a.exe
+Run Build Command(s):D:\SOFTWARE\VS2019\COMMON7\IDE\COMMONEXTENSIONS\MICROSOFT\CMAKE\Ninja\ninja.exe cmTC_cc1bb && [1/2] Building CXX object CMakeFiles\cmTC_cc1bb.dir\CMakeCXXCompilerABI.cpp.obj
+[2/2] Linking CXX executable cmTC_cc1bb.exe
 
 
 

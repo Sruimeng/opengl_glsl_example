@@ -1,8 +1,8 @@
-# Install script for directory: F:/project/opengl_glsl_example/support/GLFW/src
+# Install script for directory: D:/project/opengl_glsl_example/support/GLFW/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "F:/project/opengl_glsl_example/out/install/x64")
+  set(CMAKE_INSTALL_PREFIX "D:/project/opengl_glsl_example/out/install/x64")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 

@@ -1,8 +1,8 @@
-# Install script for directory: F:/project/opengl_glsl_example/support
+# Install script for directory: D:/project/opengl_glsl_example/support
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "F:/project/opengl_glsl_example/out/install/x64")
+  set(CMAKE_INSTALL_PREFIX "D:/project/opengl_glsl_example/out/install/x64")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -34,9 +34,9 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("F:/project/opengl_glsl_example/build/x64/support/GLFW/cmake_install.cmake")
-  include("F:/project/opengl_glsl_example/build/x64/support/glad/cmake_install.cmake")
-  include("F:/project/opengl_glsl_example/build/x64/support/tojpg/cmake_install.cmake")
+  include("D:/project/opengl_glsl_example/build/x64/support/GLFW/cmake_install.cmake")
+  include("D:/project/opengl_glsl_example/build/x64/support/glad/cmake_install.cmake")
+  include("D:/project/opengl_glsl_example/build/x64/support/tojpg/cmake_install.cmake")
 
 endif()
 

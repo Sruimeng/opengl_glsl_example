@@ -279,7 +279,7 @@ int main()
 	glBindFramebuffer(GL_FRAMEBUFFER, 0);
 	// draw as wireframe
 	//glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
-
+	glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 	//渲染
 	while (!glfwWindowShouldClose(window))
 	{
@@ -295,7 +295,8 @@ int main()
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 		shaderProgram.use();
 		glBindVertexArray(VAO);
-		glDrawArrays(GL_TRIANGLES, 0,600);
+		glDrawElements(GL_TRIANGLES, static_cast<GLsizei>(indices.size()), GL_UNSIGNED_INT, 0);
+		//glDrawArrays(GL_TRIANGLES, 0,600);
 		glBindVertexArray(0);
 
 		// now bind back to default framebuffer and draw a quad plane with the attached framebuffer color texture

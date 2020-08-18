@@ -35,7 +35,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "f:/project/opengl_glsl_example/build/x64"
+			"value" : "d:/project/opengl_glsl_example/build/x64"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -83,7 +83,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/cmake.exe"
+			"value" : "D:/software/vs2019/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/cmake.exe"
 		},
 		{
 			"name" : "CMAKE_CPACK_COMMAND",
@@ -95,7 +95,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/cpack.exe"
+			"value" : "D:/software/vs2019/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/cpack.exe"
 		},
 		{
 			"name" : "CMAKE_CTEST_COMMAND",
@@ -107,7 +107,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/ctest.exe"
+			"value" : "D:/software/vs2019/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/ctest.exe"
 		},
 		{
 			"name" : "CMAKE_CXX_COMPILER",
@@ -123,7 +123,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.26.28801/bin/HostX64/x64/cl.exe"
+			"value" : "D:/software/vs2019/VC/Tools/MSVC/14.26.28801/bin/HostX64/x64/cl.exe"
 		},
 		{
 			"name" : "CMAKE_CXX_FLAGS",
@@ -235,7 +235,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.26.28801/bin/HostX64/x64/cl.exe"
+			"value" : "D:/software/vs2019/VC/Tools/MSVC/14.26.28801/bin/HostX64/x64/cl.exe"
 		},
 		{
 			"name" : "CMAKE_C_FLAGS",
@@ -523,7 +523,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "F:/project/opengl_glsl_example"
+			"value" : "D:/project/opengl_glsl_example"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -535,7 +535,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "F:/project/opengl_glsl_example/out/install/x64"
+			"value" : "D:/project/opengl_glsl_example/out/install/x64"
 		},
 		{
 			"name" : "CMAKE_LINKER",
@@ -551,7 +551,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.26.28801/bin/Hostx64/x64/link.exe"
+			"value" : "D:/software/vs2019/VC/Tools/MSVC/14.26.28801/bin/Hostx64/x64/link.exe"
 		},
 		{
 			"name" : "CMAKE_MAKE_PROGRAM",
@@ -559,11 +559,11 @@
 			[
 				{
 					"name" : "HELPSTRING",
-					"value" : "make program"
+					"value" : "No help, variable specified on the command line."
 				}
 			],
-			"type" : "FILEPATH",
-			"value" : "C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe"
+			"type" : "UNINITIALIZED",
+			"value" : "D:\\SOFTWARE\\VS2019\\COMMON7\\IDE\\COMMONEXTENSIONS\\MICROSOFT\\CMAKE\\Ninja\\ninja.exe"
 		},
 		{
 			"name" : "CMAKE_MODULE_LINKER_FLAGS",
@@ -899,7 +899,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.17"
+			"value" : "D:/software/vs2019/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.17"
 		},
 		{
 			"name" : "CMAKE_SHARED_LINKER_FLAGS",
@@ -1143,7 +1143,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "F:/project/opengl_glsl_example/build/x64/support/GLFW"
+			"value" : "D:/project/opengl_glsl_example/build/x64/support/GLFW"
 		},
 		{
 			"name" : "GLFW_BUILD_DOCS",
@@ -1215,7 +1215,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "F:/project/opengl_glsl_example/support/GLFW"
+			"value" : "D:/project/opengl_glsl_example/support/GLFW"
 		},
 		{
 			"name" : "GLFW_USE_HYBRID_HPG",
@@ -1311,7 +1311,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "C:/VulkanSDK/1.2.148.1/Include"
+			"value" : "VULKAN_INCLUDE_DIR-NOTFOUND"
 		},
 		{
 			"name" : "VULKAN_LIBRARY",
@@ -1355,7 +1355,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "F:/project/opengl_glsl_example/build/x64/glsl1"
+			"value" : "D:/project/opengl_glsl_example/build/x64/glsl1"
 		},
 		{
 			"name" : "glsl1_SOURCE_DIR",
@@ -1367,7 +1367,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "F:/project/opengl_glsl_example/glsl1"
+			"value" : "D:/project/opengl_glsl_example/glsl1"
 		},
 		{
 			"name" : "glsl_example_BINARY_DIR",
@@ -1379,7 +1379,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "F:/project/opengl_glsl_example/build/x64"
+			"value" : "D:/project/opengl_glsl_example/build/x64"
 		},
 		{
 			"name" : "glsl_example_SOURCE_DIR",
@@ -1391,7 +1391,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "F:/project/opengl_glsl_example"
+			"value" : "D:/project/opengl_glsl_example"
 		}
 	],
 	"kind" : "cache",

@@ -12,7 +12,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "support/tojpg/tojpg.lib"
+			"path" : "support/glad/glad.lib"
 		}
 	],
 	"backtrace" : 1,
@@ -25,7 +25,7 @@
 		],
 		"files" : 
 		[
-			"support/tojpg/CMakeLists.txt",
+			"support/glad/CMakeLists.txt",
 			"CMakeLists.txt"
 		],
 		"nodes" : 
@@ -56,42 +56,42 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "/DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1  "
+					"fragment" : "/DWIN32 /D_WINDOWS /W3 /MDd /Zi /Ob0 /Od /RTC1  "
 				}
 			],
 			"includes" : 
 			[
 				{
 					"backtrace" : 3,
-					"path" : "F:/project/opengl_glsl_example/include"
+					"path" : "D:/project/opengl_glsl_example/include"
 				}
 			],
-			"language" : "CXX",
+			"language" : "C",
 			"sourceIndexes" : 
 			[
-				1
+				0
 			]
 		}
 	],
-	"id" : "tojpg::@51a9640511d0770a8622",
-	"name" : "tojpg",
-	"nameOnDisk" : "tojpg.lib",
+	"id" : "glad::@02d18dd5526617afe78f",
+	"name" : "glad",
+	"nameOnDisk" : "glad.lib",
 	"paths" : 
 	{
-		"build" : "support/tojpg",
-		"source" : "support/tojpg"
+		"build" : "support/glad",
+		"source" : "support/glad"
 	},
 	"sourceGroups" : 
 	[
 		{
-			"name" : "Header Files",
+			"name" : "Source Files",
 			"sourceIndexes" : 
 			[
 				0
 			]
 		},
 		{
-			"name" : "Source Files",
+			"name" : "Header Files",
 			"sourceIndexes" : 
 			[
 				1
@@ -102,13 +102,13 @@
 	[
 		{
 			"backtrace" : 1,
-			"path" : "support/tojpg/toojpeg.h",
+			"compileGroupIndex" : 0,
+			"path" : "support/glad/glad.c",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "support/tojpg/toojpeg.cpp",
+			"path" : "support/glad/glad.h",
 			"sourceGroupIndex" : 1
 		}
 	],
