@@ -108,7 +108,6 @@ namespace {
 	};
 }
 
-
 int main()
 {
 
@@ -118,7 +117,7 @@ int main()
 	toy::loadScene(gltfFilename, &scene);
 	toy::Camera camera;
 	toy::Mesh mesh;
-	create_sphere(1, 32, 32, &mesh);
+	create_sphere(1, 128, 128, &mesh);
 	////opengl 初始化
 	openglInit(4, 3);
 
