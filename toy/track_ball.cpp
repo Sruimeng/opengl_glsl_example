@@ -7,6 +7,6 @@ namespace toy {
 	}
 
 	void trackBall::zoom(int dir) {
-
+		float zoom = (dir>0)?1/m_zoo
 	}
 }

@@ -16,11 +16,11 @@ namespace toy {
         m_aspectRatio = aspectRatio;
     }
 
-    void Camera::UVWFrame(float3& U, float3& V, float3& W) {
-        W = m_lookat - m_eye; // Do not normalize W -- it implies focal length
-        float wlen = length(W);
-        U = normalize(cross(W, m_up));
-        V = normalize(cross(U, W));
+    void Camera::UVNFrame(float3& U, float3& V, float3& N) {
+        N = m_lookat - m_eye; // Do not normalize W -- it implies focal length
+        float wlen = length(N);
+        U = normalize(cross(N, m_up));
+        V = normalize(cross(U, N));
 
         float vlen = wlen * tanf(0.5f * m_fovY * M_PIf / 180.0f);//«Û ”æ‡
         V *= vlen;

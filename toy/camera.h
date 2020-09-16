@@ -7,7 +7,7 @@ namespace toy {
         //默认参数的相机
         Camera();
         Camera(const float3& eye, const float3& lookat, const float3& up, float fovY, float aspectRatio);
-        void UVWFrame(float3& U, float3& V, float3& W);
+        void UVNFrame(float3& U, float3& V, float3& N);
     private:
         float3 m_eye;
         float3 m_lookat;
