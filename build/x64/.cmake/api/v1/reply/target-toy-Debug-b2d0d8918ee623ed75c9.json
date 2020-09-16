@@ -71,7 +71,8 @@
 			[
 				4,
 				6,
-				8
+				8,
+				11
 			]
 		}
 	],
@@ -95,7 +96,8 @@
 				3,
 				5,
 				7,
-				9
+				9,
+				10
 			]
 		},
 		{
@@ -104,7 +106,8 @@
 			[
 				4,
 				6,
-				8
+				8,
+				11
 			]
 		}
 	],
@@ -162,6 +165,17 @@
 			"backtrace" : 1,
 			"path" : "toy/quaternion.h",
 			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "toy/euler.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "toy/track_ball.cpp",
+			"sourceGroupIndex" : 1
 		}
 	],
 	"type" : "STATIC_LIBRARY"

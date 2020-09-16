@@ -458,6 +458,14 @@ build toy\CMakeFiles\toy.dir\camera.cpp.obj: CXX_COMPILER__toy_Debug ..\..\toy\c
   TARGET_COMPILE_PDB = toy\CMakeFiles\toy.dir\toy.pdb
   TARGET_PDB = toy\toy.pdb
 
+build toy\CMakeFiles\toy.dir\track_ball.cpp.obj: CXX_COMPILER__toy_Debug ..\..\toy\track_ball.cpp || cmake_object_order_depends_target_toy_Debug
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
+  INCLUDES = -I..\..\include
+  OBJECT_DIR = toy\CMakeFiles\toy.dir
+  OBJECT_FILE_DIR = toy\CMakeFiles\toy.dir
+  TARGET_COMPILE_PDB = toy\CMakeFiles\toy.dir\toy.pdb
+  TARGET_PDB = toy\toy.pdb
+
 
 # =============================================================================
 # Link build statements for STATIC_LIBRARY target toy
@@ -466,7 +474,7 @@ build toy\CMakeFiles\toy.dir\camera.cpp.obj: CXX_COMPILER__toy_Debug ..\..\toy\c
 #############################################
 # Link the static library toy\toy.lib
 
-build toy\toy.lib: CXX_STATIC_LIBRARY_LINKER__toy_Debug toy\CMakeFiles\toy.dir\scene.cpp.obj toy\CMakeFiles\toy.dir\load_gltf.cpp.obj toy\CMakeFiles\toy.dir\camera.cpp.obj
+build toy\toy.lib: CXX_STATIC_LIBRARY_LINKER__toy_Debug toy\CMakeFiles\toy.dir\scene.cpp.obj toy\CMakeFiles\toy.dir\load_gltf.cpp.obj toy\CMakeFiles\toy.dir\camera.cpp.obj toy\CMakeFiles\toy.dir\track_ball.cpp.obj
   LANGUAGE_COMPILE_FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
   LINK_FLAGS = /machine:x64
   OBJECT_DIR = toy\CMakeFiles\toy.dir

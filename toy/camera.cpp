@@ -22,7 +22,7 @@ namespace toy {
         U = normalize(cross(W, m_up));
         V = normalize(cross(U, W));
 
-        float vlen = wlen * tanf(0.5f * m_fovY * M_PIf / 180.0f);
+        float vlen = wlen * tanf(0.5f * m_fovY * M_PIf / 180.0f);//«Û ”æ‡
         V *= vlen;
         float ulen = vlen * m_aspectRatio;
         U *= ulen;
