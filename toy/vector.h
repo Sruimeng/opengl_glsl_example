@@ -36,6 +36,10 @@ namespace toy {
 	inline float4 make_float4(float x,float y,float z,float w) {
 		float4 r;		r.x = x;		r.y = y;		r.z = z;		r.w = w; return r;
 	}
+	//¼Ó·¨
+	inline float3 operator+(const float3& a, const float3& b) {
+		return make_float3(a.x + b.x, a.y + b.y, a.z + b.z);
+	}
 	//¼õ·¨
 	inline float3 operator-(const float3& a, const float3& b) {
 		return make_float3(a.x - b.x, a.y - b.y, a.z - b.z);
