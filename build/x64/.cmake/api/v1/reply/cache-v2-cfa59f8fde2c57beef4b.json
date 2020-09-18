@@ -1392,6 +1392,30 @@
 			],
 			"type" : "STATIC",
 			"value" : "D:/project/opengl_glsl_example"
+		},
+		{
+			"name" : "test_BINARY_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "D:/project/opengl_glsl_example/build/x64/test"
+		},
+		{
+			"name" : "test_SOURCE_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "D:/project/opengl_glsl_example/test"
 		}
 	],
 	"kind" : "cache",

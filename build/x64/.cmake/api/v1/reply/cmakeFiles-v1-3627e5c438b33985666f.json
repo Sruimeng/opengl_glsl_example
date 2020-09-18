@@ -236,7 +236,7 @@
 			"path" : "toy/CMakeLists.txt"
 		},
 		{
-			"path" : "glsl1/CMakeLists.txt"
+			"path" : "test/CMakeLists.txt"
 		}
 	],
 	"kind" : "cmakeFiles",

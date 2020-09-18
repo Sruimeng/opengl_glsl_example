@@ -106,14 +106,14 @@
 					]
 				},
 				{
-					"build" : "glsl1",
+					"build" : "test",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.0.0"
 					},
 					"parentIndex" : 0,
 					"projectIndex" : 2,
-					"source" : "glsl1",
+					"source" : "test",
 					"targetIndexes" : 
 					[
 						2
@@ -163,7 +163,7 @@
 					[
 						7
 					],
-					"name" : "glsl1",
+					"name" : "test",
 					"parentIndex" : 0,
 					"targetIndexes" : 
 					[
@@ -189,9 +189,9 @@
 				},
 				{
 					"directoryIndex" : 7,
-					"id" : "glsl1::@9ed63238e005545f843f",
-					"jsonFile" : "target-glsl1-Debug-5a6c58e8e92db39719ff.json",
-					"name" : "glsl1",
+					"id" : "test::@36f028580bb02cc8272a",
+					"jsonFile" : "target-test-Debug-6e501b3a894b659debc7.json",
+					"name" : "test",
 					"projectIndex" : 2
 				},
 				{

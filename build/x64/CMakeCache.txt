@@ -269,6 +269,12 @@ glsl_example_BINARY_DIR:STATIC=D:/project/opengl_glsl_example/build/x64
 //Value Computed by CMake
 glsl_example_SOURCE_DIR:STATIC=D:/project/opengl_glsl_example
 
+//Value Computed by CMake
+test_BINARY_DIR:STATIC=D:/project/opengl_glsl_example/build/x64/test
+
+//Value Computed by CMake
+test_SOURCE_DIR:STATIC=D:/project/opengl_glsl_example/test
+
 
 ########################
 # INTERNAL cache entries

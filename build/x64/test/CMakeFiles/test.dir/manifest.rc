@@ -1,0 +1,2 @@
+#pragma code_page(65001)
+1 /* CREATEPROCESS_MANIFEST_RESOURCE_ID */ 24 /* RT_MANIFEST */ "D:/project/opengl_glsl_example/build/x64/test/CMakeFiles/test.dir/embed.manifest"
