@@ -13,7 +13,8 @@ namespace toy {
 		trackBall();
 		
 		inline void zoom(int direction);
-
+		//»¬ÂÖ·½·¨
+		inline bool wheelEvent(int wheelY);
 		inline void setCamera(Camera* camera) { m_camera = camera; }
 	private:
 		bool m_panLocked = false;
