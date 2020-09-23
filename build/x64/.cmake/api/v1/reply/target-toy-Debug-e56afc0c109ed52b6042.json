@@ -98,7 +98,8 @@
 				7,
 				9,
 				10,
-				12
+				12,
+				13
 			]
 		},
 		{
@@ -181,6 +182,11 @@
 		{
 			"backtrace" : 1,
 			"path" : "toy/controls/controls.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "toy/util.h",
 			"sourceGroupIndex" : 0
 		}
 	],
