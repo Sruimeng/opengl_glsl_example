@@ -1,7 +1,7 @@
 # http://www.gnu.org/software/automake
 /out
 /.vs
-
+/build
 CMakeSettings.json
 # Generated Makefile 
 # (meta build system like autotools, 

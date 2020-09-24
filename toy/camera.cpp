@@ -17,6 +17,7 @@ namespace toy {
     }
 
     void Camera::UVNFrame(float3& U, float3& V, float3& N) {
+        //获得uvn的各个参数 并求出各个方向上的长度
         N = m_lookat - m_eye; // Do not normalize W -- it implies focal length
         float wlen = length(N);
         U = normalize(cross(N, m_up));

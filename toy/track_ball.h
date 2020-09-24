@@ -10,12 +10,12 @@ namespace toy {
 	class trackBall
 	{
 	public:
-		trackBall();
 		
 		inline void zoom(int direction);
 		//»¬ÂÖ·½·¨ 
 		inline bool wheelEvent(int wheelY);
 		inline void setCamera(Camera* camera) { m_camera = camera; }
+		inline const Camera* getCamera() const { return m_camera; }
 	private:
 		bool m_panLocked = false;
 		bool m_zoomLocked = false;

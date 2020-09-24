@@ -2,9 +2,27 @@
 #include "GLFW/glfw3.h"
 
 #include <iostream>
+
+#include "../toy/camera.h"
+#include "../toy/track_ball.h"
+
+toy::Camera     camera;
+toy::trackBall  trackball;
 namespace {
     void framebuffer_size_callback(GLFWwindow* window, int width, int height);
-    void processInput(GLFWwindow* window);
+    void processInput(GLFWwindow* window)
+    {
+        if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
+            glfwSetWindowShouldClose(window, true);
+    }
+
+    static void scrollCallback(GLFWwindow* window, double xscroll, double yscroll)
+    {
+        std::cerr << "yscroll: " << yscroll << ",xscroll: " << xscroll << "\n";
+       auto a= trackball.wheelEvent((int)yscroll);
+
+    }
+
 }
 
 
@@ -41,6 +59,9 @@ int main()
     // glfw window creation
     // --------------------
     GLFWwindow* window = glfwCreateWindow(SCR_WIDTH, SCR_HEIGHT, "LearnOpenGL", NULL, NULL);
+
+
+    glfwSetScrollCallback(window, scrollCallback);
     if (window == NULL)
     {
         std::cout << "Failed to create GLFW window" << std::endl;
@@ -48,7 +69,6 @@ int main()
         return -1;
     }
     glfwMakeContextCurrent(window);
-    glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
 
     // glad: load all OpenGL function pointers
     // ---------------------------------------
@@ -128,7 +148,7 @@ int main()
 
 
     // uncomment this call to draw in wireframe polygons.
-    //glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+    glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 
     // render loop
     // -----------
@@ -137,7 +157,6 @@ int main()
         // input
         // -----
         processInput(window);
-
         // render
         // ------
         glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
@@ -167,13 +186,7 @@ int main()
     return 0;
 }
 
-// process all input: query GLFW whether relevant keys are pressed/released this frame and react accordingly
-// ---------------------------------------------------------------------------------------------------------
-void processInput(GLFWwindow* window)
-{
-    if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
-        glfwSetWindowShouldClose(window, true);
-}
+
 
 // glfw: whenever the window size changed (by OS or user resize) this callback function executes
 // ---------------------------------------------------------------------------------------------
