@@ -34,8 +34,8 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("D:/project/opengl_glsl_example/build/x64/support/cmake_install.cmake")
   include("D:/project/opengl_glsl_example/build/x64/toy/cmake_install.cmake")
+  include("D:/project/opengl_glsl_example/build/x64/support/cmake_install.cmake")
   include("D:/project/opengl_glsl_example/build/x64/test/cmake_install.cmake")
 
 endif()

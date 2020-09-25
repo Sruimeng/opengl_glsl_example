@@ -8,23 +8,6 @@
 
 toy::Camera     camera;
 toy::trackBall  trackball;
-namespace {
-    void framebuffer_size_callback(GLFWwindow* window, int width, int height);
-    void processInput(GLFWwindow* window)
-    {
-        if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
-            glfwSetWindowShouldClose(window, true);
-    }
-
-    static void scrollCallback(GLFWwindow* window, double xscroll, double yscroll)
-    {
-        std::cerr << "yscroll: " << yscroll << ",xscroll: " << xscroll << "\n";
-       auto a= trackball.wheelEvent((int)yscroll);
-
-    }
-
-}
-
 
 // settings
 const unsigned int SCR_WIDTH = 800;
@@ -42,9 +25,29 @@ const char* fragmentShaderSource = "#version 330 core\n"
 "{\n"
 "   FragColor = vec4(1.0f, 0.5f, 0.2f, 1.0f);\n"
 "}\n\0";
+namespace {
+    void framebuffer_size_callback(GLFWwindow* window, int width, int height);
+    void processInput(GLFWwindow* window)
+    {
+        if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
+            glfwSetWindowShouldClose(window, true);
+    }
+
+    static void scrollCallback(GLFWwindow* window, double xscroll, double yscroll)
+    {
+        std::cerr << "yscroll: " << yscroll << ",xscroll: " << xscroll << "\n";
+        trackball.wheelEvent((int)yscroll);
+
+    }
+
+}
+
+
+
 
 int main()
 {
+    trackball.setCamera(&camera);
     // glfw: initialize and configure
     // ------------------------------
     glfwInit();

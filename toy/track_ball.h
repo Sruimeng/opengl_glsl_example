@@ -1,22 +1,16 @@
 //轨迹球控制代码
-
 #pragma once
 #include "camera.h"
 namespace toy {
-	namespace {
-
-	}
-
 	class trackBall
 	{
 	public:
-		
-		inline void zoom(int direction);
 		//滑轮方法 
-		inline bool wheelEvent(int wheelY);
+		bool wheelEvent(int wheelY);
 		inline void setCamera(Camera* camera) { m_camera = camera; }
 		inline const Camera* getCamera() const { return m_camera; }
 	private:
+		void zoom(int direction);
 		bool m_panLocked = false;
 		bool m_zoomLocked = false;
 		bool m_rotLocked = false;

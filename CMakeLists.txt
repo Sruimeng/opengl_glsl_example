@@ -14,9 +14,9 @@ add_definitions(${OpenGL_DEFINITIONS})
 if(NOT OPENGL_FOUND)
     message(ERROR " OPENGL not found!")
 endif(NOT OPENGL_FOUND)
-
-add_subdirectory(support)
 add_subdirectory(toy)
+add_subdirectory(support)
+
 #add_subdirectory(glsl1)
 
 
