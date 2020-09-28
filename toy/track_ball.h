@@ -25,6 +25,7 @@ namespace toy {
 		//鼠标相关参数
 		int m_prevPosX=0;
 		int m_prevPosY=0;
+		//俯仰角
 		//uvn矩阵
 		float3 m_u = make_float3(0.0f);
 		float3 m_v = make_float3(0.0f);

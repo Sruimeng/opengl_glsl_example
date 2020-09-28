@@ -1,5 +1,6 @@
 #pragma once
 #include "vector.h"
+#include "matrix.h"
 namespace toy {
     class  Camera
     {
@@ -21,13 +22,24 @@ namespace toy {
         inline void setAspectRatio(const float& val) { m_aspectRatio = val; }
         inline float3 getDirection() const { return normalize(m_lookat - m_eye); }
         inline void setDirection(const float3& dir) { m_lookat = m_eye + dir*length(m_lookat - m_eye); };
+        inline const Matrix4x4& getPerspective() const { return m_perspectiveMatrix; }
         void UVNFrame(float3& U, float3& V, float3& N);
+
+        void makePerspective() {
+            auto halfFovY = std::tanf(m_fovY / 2);
+            m_perspectiveMatrix.identity();
+            auto tempElements = m_perspectiveMatrix.getElements();
+            m_perspectiveMatrix.identity();
+            //tempElements[0] = 1 / (m_aspectRatio * halfFovY);
+        }
     private:
         float3 m_eye;
         float3 m_lookat;
         float3 m_up;
         float m_fovY;
         float m_aspectRatio;
+       
+        Matrix4x4 m_perspectiveMatrix;
     };
 
     

@@ -5,7 +5,7 @@
 
 #include "../toy/camera.h"
 #include "../toy/track_ball.h"
-
+#include "../toy/matrix.h"
 toy::Camera     camera;
 toy::trackBall  trackball;
 
@@ -47,6 +47,8 @@ namespace {
 
 int main()
 {
+    toy::Matrix4x4 model;
+    model.identity();
     trackball.setCamera(&camera);
     // glfw: initialize and configure
     // ------------------------------
@@ -64,7 +66,7 @@ int main()
     GLFWwindow* window = glfwCreateWindow(SCR_WIDTH, SCR_HEIGHT, "LearnOpenGL", NULL, NULL);
 
 
-    glfwSetScrollCallback(window, scrollCallback);
+    
     if (window == NULL)
     {
         std::cout << "Failed to create GLFW window" << std::endl;
@@ -72,7 +74,7 @@ int main()
         return -1;
     }
     glfwMakeContextCurrent(window);
-
+    glfwSetScrollCallback(window, scrollCallback);
     // glad: load all OpenGL function pointers
     // ---------------------------------------
     if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))

@@ -22,6 +22,8 @@ namespace toy {
 
 		Matrix(const Matrix& m);
 
+		float* getElements() { return m_elements; }
+		void setElements(const float* val) { m_elements = val; }
 		//四阶/三阶/矩阵特征化
 		static Matrix<M, M> identity();
 
