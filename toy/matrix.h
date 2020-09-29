@@ -21,7 +21,7 @@ namespace toy {
 		Matrix();
 
 		Matrix(const Matrix& m);
-
+		Matrix(const std::initializer_list<float>& list);
 		float* getElements() { return m_elements; }
 		void setElements(const float* val) { m_elements = val; }
 		//四阶/三阶/矩阵特征化
@@ -36,7 +36,10 @@ namespace toy {
 	Matrix<M,N>::Matrix()
 	{
 	}
-
+	template <unsigned int M, unsigned int N>
+	Matrix<M, N>::Matrix(const std::initializer_list<float>& list) {
+		m_elements = list;
+	}
 	template <unsigned int M, unsigned int N>
 	Matrix<M, N>::Matrix(const Matrix<M,N>& m)
 	{
