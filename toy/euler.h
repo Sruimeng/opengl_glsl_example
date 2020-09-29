@@ -3,17 +3,17 @@
 #include <iostream>
 #include "vector.h"
 namespace toy {
-	class euler
+	class Euler
 	{
 	public:
-		euler();
-		inline euler(float3 euler) { this->euler = euler };
+		Euler();
+		inline Euler(float3 Euler) { this->Euler = Euler };
 	private:
-		float3 euler;
+		float3 Euler;
 		std::string order;
 	};
 
-	euler::euler()
+	Euler::Euler()
 	{
 	}
 }

@@ -25,13 +25,7 @@ namespace toy {
         inline const Matrix4x4& getPerspective() const { return m_perspectiveMatrix; }
         void UVNFrame(float3& U, float3& V, float3& N);
 
-        void makePerspective() {
-            auto halfFovY = std::tanf(m_fovY / 2);
-            m_perspectiveMatrix.identity();
-            auto tempElements = m_perspectiveMatrix.getElements();
-            m_perspectiveMatrix.identity();
-            //tempElements[0] = 1 / (m_aspectRatio * halfFovY);
-        }
+        void makePerspective();
     private:
         float3 m_eye;
         float3 m_lookat;

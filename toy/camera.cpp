@@ -1,4 +1,7 @@
+#include <iostream>
+
 #include "camera.h"
+
 namespace toy {
     Camera::Camera()
     {
@@ -8,12 +11,21 @@ namespace toy {
         m_fovY = 45.f;
         m_aspectRatio = 1.f;
     };
+
+
     Camera::Camera(const float3& eye, const float3& lookat, const float3& up, float fovY, float aspectRatio) {
         m_eye = eye;
         m_lookat = lookat;
         m_up = up;
         m_fovY = fovY;
         m_aspectRatio = aspectRatio;
+    }
+
+    void Camera::makePerspective(){
+        auto halfFovY = std::tanf(m_fovY / 2);
+        m_perspectiveMatrix.identity();
+        auto tempElements = m_perspectiveMatrix.getElements();
+        //tempElements[0] = 1 / (m_aspectRatio * halfFovY);
     }
 
     void Camera::UVNFrame(float3& U, float3& V, float3& N) {
