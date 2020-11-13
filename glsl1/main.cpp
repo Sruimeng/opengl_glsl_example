@@ -33,10 +33,10 @@ namespace {
 	}
 
 	void create_plane(
-		toy::Mesh* mesh,
+		toy::Mesh* mesh, 
 		const int32_t u_dir, const int32_t v_dir,
 		const int32_t width, const int32_t height, const int32_t depth,
-		const int32_t grid_x, const int32_t grid_y, const int32_t plane_idx
+		const int32_t grid_x, const int32_t grid_y, const int32_t plane_idx, int32_t vertex_counter
 	) {
 
 		const int32_t segment_width = width / grid_x;
@@ -49,7 +49,7 @@ namespace {
 		const int32_t length_x = grid_x + 1;
 		const int32_t length_y = grid_y + 1;
 
-		int32_t vertex_counter = 0;
+
 
 		int32_t number_vertces = 0;
 		for (size_t i = 0; i < length_y; i++)
@@ -98,7 +98,7 @@ namespace {
 				toy::float3 t_normal;
 				switch (plane_idx)
 				{
-				case 2:
+				case 0:
 					t_normal = toy::make_float3(
 						depth > 0 ? -1 : 1,
 						0,
@@ -112,7 +112,7 @@ namespace {
 						0
 					);
 					break;
-				case 0:
+				case 2:
 					t_normal = toy::make_float3(
 						0,
 						0,
@@ -136,10 +136,10 @@ namespace {
 
 			for (size_t j = 0; j < grid_x; j++) {
 
-				const int32_t a = number_vertces + j + length_x * i;
-				const int32_t b = number_vertces + j + length_x * (i + 1);
-				const int32_t c = number_vertces + (j + 1) + length_x * (i + 1);
-				const int32_t d = number_vertces + (j + 1) + length_x * i;
+				const int32_t a = vertex_counter + j + length_x * i;
+				const int32_t b = vertex_counter + j + length_x * (i + 1);
+				const int32_t c = vertex_counter + (j + 1) + length_x * (i + 1);
+				const int32_t d = vertex_counter + (j + 1) + length_x * i;
 
 				// faces
 
@@ -156,15 +156,19 @@ namespace {
 		const int32_t widthSegments, const int32_t heightSegments, const int32_t depthSegments,
 		toy::Mesh* mesh
 	) {
-		int32_t width_segments = std::floor(widthSegments) || 1;
-		int32_t height_segments = std::floor(heightSegments) || 1;
-		int32_t depth_segments = std::floor(depthSegments) || 1;
-		create_plane(mesh, -1, -1, depth, height, width, depthSegments, heightSegments, 0); // px
-		create_plane(mesh, 1, -1, depth, height, -width, depthSegments, heightSegments, 0); // nx
-		create_plane(mesh, 1, 1, width, depth, height, widthSegments, depthSegments, 1); // py
-		create_plane(mesh, 1, -1, width, depth, -height, widthSegments, depthSegments, 1); // ny
-		create_plane(mesh, 1, -1, width, height, depth, widthSegments, heightSegments, 2); // pz
-		create_plane(mesh, -1, -1, width, height, -depth, widthSegments, heightSegments, 2); // nz
+		int32_t vertex_counter = 0;
+		create_plane(mesh, -1, -1, depth, height, width, depthSegments, heightSegments, 0, vertex_counter); // px
+		vertex_counter += 9;
+		create_plane(mesh, 1, -1, depth, height, -width, depthSegments, heightSegments, 0, vertex_counter); // nx
+		vertex_counter += 9;
+		create_plane(mesh, 1, 1, width, depth, height, widthSegments, depthSegments, 1, vertex_counter); // py
+		vertex_counter += 9;
+		create_plane(mesh, 1, -1, width, depth, -height, widthSegments, depthSegments, 1, vertex_counter); // ny
+		vertex_counter += 9;
+		create_plane(mesh, 1, -1, width, height, depth, widthSegments, heightSegments, 2, vertex_counter); // pz
+		vertex_counter += 9;
+		create_plane(mesh, -1, -1, width, height, -depth, widthSegments, heightSegments, 2, vertex_counter); // nz
+		vertex_counter += 9;
 		mesh->transform = mesh->transform.identity();
 	}
 
@@ -250,11 +254,11 @@ int main()
 	const std::string filename = "D:/project/atlas/models/";
 	std::string gltfFilename = filename + "/199.glb";
 	toy::Scene scene;
-	//toy::loadScene(gltfFilename, &scene);
+	toy::loadScene(gltfFilename, &scene);
 	toy::Camera camera;
 	toy::Mesh mesh;
 	//create_sphere(1, 128, 128, &mesh);
-	create_box(2, 2, 2, 5, 5, 5, &mesh);
+	create_box(2, 2, 2, 2, 2, 2, &mesh);
 	////opengl 初始化
 	openglInit(4, 3);
 
@@ -415,7 +419,7 @@ int main()
 	glBindFramebuffer(GL_FRAMEBUFFER, 0);
 	// draw as wireframe
 	//glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
-	//glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+	glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 	//渲染
 	while (!glfwWindowShouldClose(window))
 	{
