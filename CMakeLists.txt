@@ -17,7 +17,7 @@ endif(NOT OPENGL_FOUND)
 add_subdirectory(toy)
 add_subdirectory(support)
 
-#add_subdirectory(glsl1)
+add_subdirectory(glsl1)
 
 
 # add_subdirectory(glsl2)
@@ -28,4 +28,4 @@ add_subdirectory(support)
 # add_subdirectory(glsl5)
 # add_subdirectory(glsl6)
 # add_subdirectory(glsl7)
-add_subdirectory(test)
+# add_subdirectory(test)

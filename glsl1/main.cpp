@@ -32,6 +32,142 @@ namespace {
 #endif
 	}
 
+	void create_plane(
+		toy::Mesh* mesh,
+		const int32_t u_dir, const int32_t v_dir,
+		const int32_t width, const int32_t height, const int32_t depth,
+		const int32_t grid_x, const int32_t grid_y, const int32_t plane_idx
+	) {
+
+		const int32_t segment_width = width / grid_x;
+		const int32_t segment_height = height / grid_y;
+
+		const int32_t half_width = width / 2;
+		const int32_t half_height = height / 2;
+		const int32_t half_depth = depth / 2;
+
+		const int32_t length_x = grid_x + 1;
+		const int32_t length_y = grid_y + 1;
+
+		int32_t vertex_counter = 0;
+
+		int32_t number_vertces = 0;
+		for (size_t i = 0; i < length_y; i++)
+		{
+			const int32_t y = i * segment_height - half_height;
+			for (size_t j = 0; j < length_x; j++)
+			{
+				const int32_t x = j * segment_width - half_width;
+
+				toy::float3 t_vector;
+				switch (plane_idx)
+				{
+				case 0:
+					t_vector = toy::make_float3(
+						half_depth,
+						y * v_dir,
+						x * u_dir
+					);
+					break;
+				case 1:
+					t_vector = toy::make_float3(
+						x * u_dir,
+						half_depth,
+						y * v_dir
+					);
+					break;
+				case 2:
+					t_vector = toy::make_float3(
+						x * u_dir,
+						y * v_dir,
+						half_depth
+					);
+					break;
+				default:
+					break;
+				}
+				/*Matrix4x4 t_m = Quaternion(
+					static_cast<float>(0.924),
+					static_cast<float>(0),
+					static_cast<float>(0.383),
+					static_cast<float>(0)
+				).rotationMatrix();
+				t_vector = make_float3(t_m * make_float4(t_vector, 1.0));*/
+
+				mesh->verticesArray.push_back(t_vector);
+				toy::float3 t_normal;
+				switch (plane_idx)
+				{
+				case 2:
+					t_normal = toy::make_float3(
+						depth > 0 ? -1 : 1,
+						0,
+						0
+					);
+					break;
+				case 1:
+					t_normal = toy::make_float3(
+						0,
+						depth > 0 ? -1 : 1,
+						0
+					);
+					break;
+				case 0:
+					t_normal = toy::make_float3(
+						0,
+						0,
+						depth > 0 ? -1 : 1
+					);
+					break;
+				default:
+					break;
+				}
+				mesh->normalsArray.push_back(t_normal);
+				vertex_counter += 1;
+			}
+		}
+		// indices
+
+			// 1. you need three indices to draw a single face
+			// 2. a single segment consists of two faces
+			// 3. so we need to generate six (2*3) indices per segment
+
+		for (size_t i = 0; i < grid_y; i++) {
+
+			for (size_t j = 0; j < grid_x; j++) {
+
+				const int32_t a = number_vertces + j + length_x * i;
+				const int32_t b = number_vertces + j + length_x * (i + 1);
+				const int32_t c = number_vertces + (j + 1) + length_x * (i + 1);
+				const int32_t d = number_vertces + (j + 1) + length_x * i;
+
+				// faces
+
+				mesh->indicesArray.push_back(toy::make_int3(a, b, d));
+				mesh->indicesArray.push_back(toy::make_int3(b, c, d));
+
+			}
+
+		}
+
+	}
+	void create_box(
+		const int32_t width, const int32_t height, const int32_t depth,
+		const int32_t widthSegments, const int32_t heightSegments, const int32_t depthSegments,
+		toy::Mesh* mesh
+	) {
+		int32_t width_segments = std::floor(widthSegments) || 1;
+		int32_t height_segments = std::floor(heightSegments) || 1;
+		int32_t depth_segments = std::floor(depthSegments) || 1;
+		create_plane(mesh, -1, -1, depth, height, width, depthSegments, heightSegments, 0); // px
+		create_plane(mesh, 1, -1, depth, height, -width, depthSegments, heightSegments, 0); // nx
+		create_plane(mesh, 1, 1, width, depth, height, widthSegments, depthSegments, 1); // py
+		create_plane(mesh, 1, -1, width, depth, -height, widthSegments, depthSegments, 1); // ny
+		create_plane(mesh, 1, -1, width, height, depth, widthSegments, heightSegments, 2); // pz
+		create_plane(mesh, -1, -1, width, height, -depth, widthSegments, heightSegments, 2); // nz
+		mesh->transform = mesh->transform.identity();
+	}
+
 	void create_sphere(int radius, int widthSegments, int heightSegments, toy::Mesh* mesh) {
 		int ix, iy;
 
@@ -114,10 +250,11 @@ int main()
 	const std::string filename = "D:/project/atlas/models/";
 	std::string gltfFilename = filename + "/199.glb";
 	toy::Scene scene;
-	toy::loadScene(gltfFilename, &scene);
+	//toy::loadScene(gltfFilename, &scene);
 	toy::Camera camera;
 	toy::Mesh mesh;
-	create_sphere(1, 128, 128, &mesh);
+	//create_sphere(1, 128, 128, &mesh);
+	create_box(2, 2, 2, 5, 5, 5, &mesh);
 	////opengl 初始化
 	openglInit(4, 3);
 
@@ -165,9 +302,9 @@ int main()
 	std::vector<int> indices;
 	for (size_t i = 0; i < mesh.verticesArray.size(); i++)
 	{
-		vertices.push_back(mesh.verticesArray[i].x);
-		vertices.push_back(mesh.verticesArray[i].y);
-		vertices.push_back(mesh.verticesArray[i].z);
+		vertices.push_back(mesh.verticesArray[i].x/2);
+		vertices.push_back(mesh.verticesArray[i].y/2);
+		vertices.push_back(mesh.verticesArray[i].z/2);
 	}
 	for (size_t i = 0; i < mesh.indicesArray.size(); i++)
 	{
@@ -278,7 +415,7 @@ int main()
 	glBindFramebuffer(GL_FRAMEBUFFER, 0);
 	// draw as wireframe
 	//glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
-	glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+	//glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 	//渲染
 	while (!glfwWindowShouldClose(window))
 	{

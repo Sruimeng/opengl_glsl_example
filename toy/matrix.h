@@ -52,7 +52,7 @@ namespace toy {
 	//新建M阶的单位矩阵
 	template <unsigned int M, unsigned int N>
 	inline  Matrix<M, M> Matrix<M, N>::identity() {
-		float temp[M * M];
+		/*float temp[M * M];
 		for (size_t i = 0; i < M*M; i++)
 		{
 			temp[i] = 0.0f;
@@ -60,8 +60,8 @@ namespace toy {
 		for (size_t i = 0; i < M * M; i++)
 		{
 			temp[i * M + i] = 1.0f;
-		}
-		return Matrix<M, M>(temp);
+		}*/
+		return Matrix<M, M>();
 	}
 
 

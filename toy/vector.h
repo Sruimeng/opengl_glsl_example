@@ -24,7 +24,8 @@ namespace toy {
 	{
 		float x, y;
 	};
-
+	inline int3 make_int3(int x, int y, int z) { int3 r; r.x = x; r.y = y; r.z = z; return r; }
+	inline int3 make_int3(int x) { int3 r; r.x = x; r.x = x; r.y = x; r.z = x; return r; }
 	inline float3 make_float3(float x, float y, float z) { float3 r; r.x = x; r.y = y; r.z = z; return r; }
 
 	inline float3 make_float3(float x) { float3 r; r.x = x; r.x = x; r.y = x; r.z = x; return r; }

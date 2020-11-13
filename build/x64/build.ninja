@@ -514,64 +514,64 @@ build support\tojpg\rebuild_cache: phony support\tojpg\CMakeFiles\rebuild_cache.
 
 
 #############################################
+# Utility command for edit_cache
+
+build glsl1\CMakeFiles\edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D D:\project\opengl_glsl_example\build\x64\glsl1 && D:\software\vs2019\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe -E echo "No interactive CMake dialog available.""
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build glsl1\edit_cache: phony glsl1\CMakeFiles\edit_cache.util
+
+# =============================================================================
+# Object build statements for EXECUTABLE target glsl1
+
+
+#############################################
+# Order-only phony target for glsl1
+
+build cmake_object_order_depends_target_glsl1_Debug: phony || cmake_object_order_depends_target_glad_Debug cmake_object_order_depends_target_tojpg_Debug cmake_object_order_depends_target_toy_Debug
+
+build glsl1\CMakeFiles\glsl1.dir\main.cpp.obj: CXX_COMPILER__glsl1_Debug ..\..\glsl1\main.cpp || cmake_object_order_depends_target_glsl1_Debug
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
+  INCLUDES = -I..\..\include
+  OBJECT_DIR = glsl1\CMakeFiles\glsl1.dir
+  OBJECT_FILE_DIR = glsl1\CMakeFiles\glsl1.dir
+  TARGET_COMPILE_PDB = glsl1\CMakeFiles\glsl1.dir\
+  TARGET_PDB = glsl1\glsl1.pdb
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target glsl1
+
+
+#############################################
+# Link the executable glsl1\glsl1.exe
+
+build glsl1\glsl1.exe: CXX_EXECUTABLE_LINKER__glsl1_Debug glsl1\CMakeFiles\glsl1.dir\main.cpp.obj | support\tojpg\tojpg.lib toy\toy.lib support\glad\glad.lib || support\glad\glad.lib support\tojpg\tojpg.lib toy\toy.lib
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
+  LINK_FLAGS = /machine:x64 /debug /INCREMENTAL /subsystem:console
+  LINK_LIBRARIES = support\tojpg\tojpg.lib  toy\toy.lib  opengl32.lib  glu32.lib  support\glad\glad.lib  glfw3.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib
+  LINK_PATH = -LIBPATH:D:\project\opengl_glsl_example\lib64
+  OBJECT_DIR = glsl1\CMakeFiles\glsl1.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_COMPILE_PDB = glsl1\CMakeFiles\glsl1.dir\
+  TARGET_FILE = glsl1\glsl1.exe
+  TARGET_IMPLIB = glsl1\glsl1.lib
+  TARGET_PDB = glsl1\glsl1.pdb
+
+
+#############################################
 # Utility command for rebuild_cache
 
-build test\CMakeFiles\rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D D:\project\opengl_glsl_example\build\x64\test && D:\software\vs2019\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe --regenerate-during-build -SD:\project\opengl_glsl_example -BD:\project\opengl_glsl_example\build\x64"
+build glsl1\CMakeFiles\rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D D:\project\opengl_glsl_example\build\x64\glsl1 && D:\software\vs2019\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe --regenerate-during-build -SD:\project\opengl_glsl_example -BD:\project\opengl_glsl_example\build\x64"
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
 
-build test\rebuild_cache: phony test\CMakeFiles\rebuild_cache.util
-
-# =============================================================================
-# Object build statements for EXECUTABLE target test
-
-
-#############################################
-# Order-only phony target for test
-
-build cmake_object_order_depends_target_test_Debug: phony || cmake_object_order_depends_target_glad_Debug cmake_object_order_depends_target_toy_Debug
-
-build test\CMakeFiles\test.dir\main.cpp.obj: CXX_COMPILER__test_Debug ..\..\test\main.cpp || cmake_object_order_depends_target_test_Debug
-  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
-  INCLUDES = -I..\..\include
-  OBJECT_DIR = test\CMakeFiles\test.dir
-  OBJECT_FILE_DIR = test\CMakeFiles\test.dir
-  TARGET_COMPILE_PDB = test\CMakeFiles\test.dir\
-  TARGET_PDB = test\test.pdb
-
-
-# =============================================================================
-# Link build statements for EXECUTABLE target test
-
-
-#############################################
-# Link the executable test\test.exe
-
-build test\test.exe: CXX_EXECUTABLE_LINKER__test_Debug test\CMakeFiles\test.dir\main.cpp.obj | toy\toy.lib support\glad\glad.lib || support\glad\glad.lib toy\toy.lib
-  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
-  LINK_FLAGS = /machine:x64 /debug /INCREMENTAL /subsystem:console
-  LINK_LIBRARIES = toy\toy.lib  opengl32.lib  glu32.lib  support\glad\glad.lib  glfw3.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib
-  LINK_PATH = -LIBPATH:D:\project\opengl_glsl_example\lib64
-  OBJECT_DIR = test\CMakeFiles\test.dir
-  POST_BUILD = cd .
-  PRE_LINK = cd .
-  TARGET_COMPILE_PDB = test\CMakeFiles\test.dir\
-  TARGET_FILE = test\test.exe
-  TARGET_IMPLIB = test\test.lib
-  TARGET_PDB = test\test.pdb
-
-
-#############################################
-# Utility command for edit_cache
-
-build test\CMakeFiles\edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D D:\project\opengl_glsl_example\build\x64\test && D:\software\vs2019\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe -E echo "No interactive CMake dialog available.""
-  DESC = No interactive CMake dialog available...
-  restat = 1
-
-build test\edit_cache: phony test\CMakeFiles\edit_cache.util
+build glsl1\rebuild_cache: phony glsl1\CMakeFiles\rebuild_cache.util
 
 # =============================================================================
 # Target aliases.
@@ -584,9 +584,9 @@ build glfw: phony support\GLFW\src\glfw3.lib
 
 build glfw3.lib: phony support\GLFW\src\glfw3.lib
 
-build test: phony test\test.exe
+build glsl1: phony glsl1\glsl1.exe
 
-build test.exe: phony test\test.exe
+build glsl1.exe: phony glsl1\glsl1.exe
 
 build tojpg: phony support\tojpg\tojpg.lib
 
@@ -604,7 +604,14 @@ build toy.lib: phony toy\toy.lib
 #############################################
 # Folder: D:/project/opengl_glsl_example/build/x64
 
-build all: phony toy\all support\all test\all
+build all: phony toy\all support\all glsl1\all
+
+# =============================================================================
+
+#############################################
+# Folder: D:/project/opengl_glsl_example/build/x64/glsl1
+
+build glsl1\all: phony glsl1\glsl1.exe
 
 # =============================================================================
 
@@ -644,13 +651,6 @@ build support\tojpg\all: phony support\tojpg\tojpg.lib
 # =============================================================================
 
 #############################################
-# Folder: D:/project/opengl_glsl_example/build/x64/test
-
-build test\all: phony test\test.exe
-
-# =============================================================================
-
-#############################################
 # Folder: D:/project/opengl_glsl_example/build/x64/toy
 
 build toy\all: phony toy\toy.lib
@@ -667,14 +667,14 @@ build toy\all: phony toy\toy.lib
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | ..\..\CMakeLists.txt ..\..\support\CMakeLists.txt ..\..\support\GLFW\CMakeLists.txt ..\..\support\GLFW\CMake\modules\FindVulkan.cmake ..\..\support\GLFW\src\CMakeLists.txt ..\..\support\GLFW\src\glfw3.pc.in ..\..\support\GLFW\src\glfw3Config.cmake.in ..\..\support\GLFW\src\glfw_config.h.in ..\..\support\glad\CMakeLists.txt ..\..\support\tojpg\CMakeLists.txt ..\..\test\CMakeLists.txt ..\..\toy\CMakeLists.txt CMakeCache.txt CMakeFiles\3.17.20032601-MSVC_2\CMakeCCompiler.cmake CMakeFiles\3.17.20032601-MSVC_2\CMakeCXXCompiler.cmake CMakeFiles\3.17.20032601-MSVC_2\CMakeRCCompiler.cmake CMakeFiles\3.17.20032601-MSVC_2\CMakeSystem.cmake D$:\software\vs2019\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.17\Modules\BasicConfigVersion-SameMajorVersion.cmake.in D$:\software\vs2019\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.17\Modules\CMakeCInformation.cmake D$:\software\vs2019\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.17\Modules\CMakeCXXInformation.cmake D$:\software\vs2019\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.17\Modules\CMakeCommonLanguageInclude.cmake D$:\software\vs2019\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.17\Modules\CMakeGenericSystem.cmake D$:\software\vs2019\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.17\Modules\CMakeInitializeConfigs.cmake D$:\software\vs2019\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.17\Modules\CMakeLanguageInformation.cmake D$:\software\vs2019\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.17\Modules\CMakePackageConfigHelpers.cmake D$:\software\vs2019\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.17\Modules\CMakeRCInformation.cmake D$:\software\vs2019\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.17\Modules\CMakeSystemSpecificInformation.cmake D$:\software\vs2019\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.17\Modules\CMakeSystemSpecificInitialize.cmake D$:\software\vs2019\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.17\Modules\CheckCSourceCompiles.cmake D$:\software\vs2019\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.17\Modules\CheckIncludeFile.cmake D$:\software\vs2019\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.17\Modules\CheckLibraryExists.cmake D$:\software\vs2019\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.17\Modules\Compiler\CMakeCommonCompilerMacros.cmake D$:\software\vs2019\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.17\Modules\Compiler\MSVC-C.cmake D$:\software\vs2019\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.17\Modules\Compiler\MSVC-CXX.cmake D$:\software\vs2019\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.17\Modules\FindOpenGL.cmake D$:\software\vs2019\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.17\Modules\FindPackageHandleStandardArgs.cmake D$:\software\vs2019\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.17\Modules\FindPackageMessage.cmake D$:\software\vs2019\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.17\Modules\FindThreads.cmake D$:\software\vs2019\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.17\Modules\Platform\Windows-MSVC-C.cmake D$:\software\vs2019\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.17\Modules\Platform\Windows-MSVC-CXX.cmake D$:\software\vs2019\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.17\Modules\Platform\Windows-MSVC.cmake D$:\software\vs2019\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.17\Modules\Platform\Windows.cmake D$:\software\vs2019\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.17\Modules\Platform\WindowsPaths.cmake D$:\software\vs2019\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.17\Modules\WriteBasicConfigVersionFile.cmake
+build build.ninja: RERUN_CMAKE | ..\..\CMakeLists.txt ..\..\glsl1\CMakeLists.txt ..\..\support\CMakeLists.txt ..\..\support\GLFW\CMakeLists.txt ..\..\support\GLFW\CMake\modules\FindVulkan.cmake ..\..\support\GLFW\src\CMakeLists.txt ..\..\support\GLFW\src\glfw3.pc.in ..\..\support\GLFW\src\glfw3Config.cmake.in ..\..\support\GLFW\src\glfw_config.h.in ..\..\support\glad\CMakeLists.txt ..\..\support\tojpg\CMakeLists.txt ..\..\toy\CMakeLists.txt CMakeCache.txt CMakeFiles\3.17.20032601-MSVC_2\CMakeCCompiler.cmake CMakeFiles\3.17.20032601-MSVC_2\CMakeCXXCompiler.cmake CMakeFiles\3.17.20032601-MSVC_2\CMakeRCCompiler.cmake CMakeFiles\3.17.20032601-MSVC_2\CMakeSystem.cmake D$:\software\vs2019\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.17\Modules\BasicConfigVersion-SameMajorVersion.cmake.in D$:\software\vs2019\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.17\Modules\CMakeCInformation.cmake D$:\software\vs2019\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.17\Modules\CMakeCXXInformation.cmake D$:\software\vs2019\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.17\Modules\CMakeCommonLanguageInclude.cmake D$:\software\vs2019\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.17\Modules\CMakeGenericSystem.cmake D$:\software\vs2019\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.17\Modules\CMakeInitializeConfigs.cmake D$:\software\vs2019\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.17\Modules\CMakeLanguageInformation.cmake D$:\software\vs2019\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.17\Modules\CMakePackageConfigHelpers.cmake D$:\software\vs2019\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.17\Modules\CMakeRCInformation.cmake D$:\software\vs2019\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.17\Modules\CMakeSystemSpecificInformation.cmake D$:\software\vs2019\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.17\Modules\CMakeSystemSpecificInitialize.cmake D$:\software\vs2019\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.17\Modules\CheckCSourceCompiles.cmake D$:\software\vs2019\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.17\Modules\CheckIncludeFile.cmake D$:\software\vs2019\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.17\Modules\CheckLibraryExists.cmake D$:\software\vs2019\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.17\Modules\Compiler\CMakeCommonCompilerMacros.cmake D$:\software\vs2019\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.17\Modules\Compiler\MSVC-C.cmake D$:\software\vs2019\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.17\Modules\Compiler\MSVC-CXX.cmake D$:\software\vs2019\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.17\Modules\FindOpenGL.cmake D$:\software\vs2019\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.17\Modules\FindPackageHandleStandardArgs.cmake D$:\software\vs2019\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.17\Modules\FindPackageMessage.cmake D$:\software\vs2019\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.17\Modules\FindThreads.cmake D$:\software\vs2019\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.17\Modules\Platform\Windows-MSVC-C.cmake D$:\software\vs2019\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.17\Modules\Platform\Windows-MSVC-CXX.cmake D$:\software\vs2019\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.17\Modules\Platform\Windows-MSVC.cmake D$:\software\vs2019\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.17\Modules\Platform\Windows.cmake D$:\software\vs2019\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.17\Modules\Platform\WindowsPaths.cmake D$:\software\vs2019\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.17\Modules\WriteBasicConfigVersionFile.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build ..\..\CMakeLists.txt ..\..\support\CMakeLists.txt ..\..\support\GLFW\CMakeLists.txt ..\..\support\GLFW\CMake\modules\FindVulkan.cmake ..\..\support\GLFW\src\CMakeLists.txt ..\..\support\GLFW\src\glfw3.pc.in ..\..\support\GLFW\src\glfw3Config.cmake.in ..\..\support\GLFW\src\glfw_config.h.in ..\..\support\glad\CMakeLists.txt ..\..\support\tojpg\CMakeLists.txt ..\..\test\CMakeLists.txt ..\..\toy\CMakeLists.txt CMakeCache.txt CMakeFiles\3.17.20032601-MSVC_2\CMakeCCompiler.cmake CMakeFiles\3.17.20032601-MSVC_2\CMakeCXXCompiler.cmake CMakeFiles\3.17.20032601-MSVC_2\CMakeRCCompiler.cmake CMakeFiles\3.17.20032601-MSVC_2\CMakeSystem.cmake D$:\software\vs2019\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.17\Modules\BasicConfigVersion-SameMajorVersion.cmake.in D$:\software\vs2019\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.17\Modules\CMakeCInformation.cmake D$:\software\vs2019\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.17\Modules\CMakeCXXInformation.cmake D$:\software\vs2019\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.17\Modules\CMakeCommonLanguageInclude.cmake D$:\software\vs2019\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.17\Modules\CMakeGenericSystem.cmake D$:\software\vs2019\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.17\Modules\CMakeInitializeConfigs.cmake D$:\software\vs2019\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.17\Modules\CMakeLanguageInformation.cmake D$:\software\vs2019\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.17\Modules\CMakePackageConfigHelpers.cmake D$:\software\vs2019\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.17\Modules\CMakeRCInformation.cmake D$:\software\vs2019\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.17\Modules\CMakeSystemSpecificInformation.cmake D$:\software\vs2019\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.17\Modules\CMakeSystemSpecificInitialize.cmake D$:\software\vs2019\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.17\Modules\CheckCSourceCompiles.cmake D$:\software\vs2019\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.17\Modules\CheckIncludeFile.cmake D$:\software\vs2019\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.17\Modules\CheckLibraryExists.cmake D$:\software\vs2019\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.17\Modules\Compiler\CMakeCommonCompilerMacros.cmake D$:\software\vs2019\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.17\Modules\Compiler\MSVC-C.cmake D$:\software\vs2019\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.17\Modules\Compiler\MSVC-CXX.cmake D$:\software\vs2019\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.17\Modules\FindOpenGL.cmake D$:\software\vs2019\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.17\Modules\FindPackageHandleStandardArgs.cmake D$:\software\vs2019\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.17\Modules\FindPackageMessage.cmake D$:\software\vs2019\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.17\Modules\FindThreads.cmake D$:\software\vs2019\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.17\Modules\Platform\Windows-MSVC-C.cmake D$:\software\vs2019\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.17\Modules\Platform\Windows-MSVC-CXX.cmake D$:\software\vs2019\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.17\Modules\Platform\Windows-MSVC.cmake D$:\software\vs2019\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.17\Modules\Platform\Windows.cmake D$:\software\vs2019\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.17\Modules\Platform\WindowsPaths.cmake D$:\software\vs2019\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.17\Modules\WriteBasicConfigVersionFile.cmake: phony
+build ..\..\CMakeLists.txt ..\..\glsl1\CMakeLists.txt ..\..\support\CMakeLists.txt ..\..\support\GLFW\CMakeLists.txt ..\..\support\GLFW\CMake\modules\FindVulkan.cmake ..\..\support\GLFW\src\CMakeLists.txt ..\..\support\GLFW\src\glfw3.pc.in ..\..\support\GLFW\src\glfw3Config.cmake.in ..\..\support\GLFW\src\glfw_config.h.in ..\..\support\glad\CMakeLists.txt ..\..\support\tojpg\CMakeLists.txt ..\..\toy\CMakeLists.txt CMakeCache.txt CMakeFiles\3.17.20032601-MSVC_2\CMakeCCompiler.cmake CMakeFiles\3.17.20032601-MSVC_2\CMakeCXXCompiler.cmake CMakeFiles\3.17.20032601-MSVC_2\CMakeRCCompiler.cmake CMakeFiles\3.17.20032601-MSVC_2\CMakeSystem.cmake D$:\software\vs2019\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.17\Modules\BasicConfigVersion-SameMajorVersion.cmake.in D$:\software\vs2019\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.17\Modules\CMakeCInformation.cmake D$:\software\vs2019\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.17\Modules\CMakeCXXInformation.cmake D$:\software\vs2019\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.17\Modules\CMakeCommonLanguageInclude.cmake D$:\software\vs2019\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.17\Modules\CMakeGenericSystem.cmake D$:\software\vs2019\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.17\Modules\CMakeInitializeConfigs.cmake D$:\software\vs2019\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.17\Modules\CMakeLanguageInformation.cmake D$:\software\vs2019\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.17\Modules\CMakePackageConfigHelpers.cmake D$:\software\vs2019\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.17\Modules\CMakeRCInformation.cmake D$:\software\vs2019\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.17\Modules\CMakeSystemSpecificInformation.cmake D$:\software\vs2019\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.17\Modules\CMakeSystemSpecificInitialize.cmake D$:\software\vs2019\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.17\Modules\CheckCSourceCompiles.cmake D$:\software\vs2019\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.17\Modules\CheckIncludeFile.cmake D$:\software\vs2019\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.17\Modules\CheckLibraryExists.cmake D$:\software\vs2019\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.17\Modules\Compiler\CMakeCommonCompilerMacros.cmake D$:\software\vs2019\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.17\Modules\Compiler\MSVC-C.cmake D$:\software\vs2019\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.17\Modules\Compiler\MSVC-CXX.cmake D$:\software\vs2019\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.17\Modules\FindOpenGL.cmake D$:\software\vs2019\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.17\Modules\FindPackageHandleStandardArgs.cmake D$:\software\vs2019\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.17\Modules\FindPackageMessage.cmake D$:\software\vs2019\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.17\Modules\FindThreads.cmake D$:\software\vs2019\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.17\Modules\Platform\Windows-MSVC-C.cmake D$:\software\vs2019\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.17\Modules\Platform\Windows-MSVC-CXX.cmake D$:\software\vs2019\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.17\Modules\Platform\Windows-MSVC.cmake D$:\software\vs2019\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.17\Modules\Platform\Windows.cmake D$:\software\vs2019\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.17\Modules\Platform\WindowsPaths.cmake D$:\software\vs2019\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.17\Modules\WriteBasicConfigVersionFile.cmake: phony
 
 
 #############################################

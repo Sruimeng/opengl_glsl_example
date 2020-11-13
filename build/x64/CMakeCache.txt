@@ -258,6 +258,12 @@ VULKAN_LIBRARY:FILEPATH=VULKAN_LIBRARY-NOTFOUND
 VULKAN_STATIC_LIBRARY:FILEPATH=VULKAN_STATIC_LIBRARY-NOTFOUND
 
 //Value Computed by CMake
+glsl1_BINARY_DIR:STATIC=D:/project/opengl_glsl_example/build/x64/glsl1
+
+//Value Computed by CMake
+glsl1_SOURCE_DIR:STATIC=D:/project/opengl_glsl_example/glsl1
+
+//Value Computed by CMake
 glsl_example_BINARY_DIR:STATIC=D:/project/opengl_glsl_example/build/x64
 
 //Value Computed by CMake

@@ -22,11 +22,11 @@ namespace toy {
     }
 
     void Camera::makePerspective(){
-        auto halfFovY = std::tanf(m_fovY / 2);
+        /*auto halfFovY = std::tanf(m_fovY / 2);
         m_perspectiveMatrix.identity();
         auto tempElements = m_perspectiveMatrix.getElements();
         tempElements[0] = 1 / (m_aspectRatio * halfFovY);
-        tempElements[5] = 1 / halfFovY;
+        tempElements[5] = 1 / halfFovY;*/
        // tempElements[10] = 
     }
 

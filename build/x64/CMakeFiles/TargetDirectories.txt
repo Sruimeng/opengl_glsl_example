@@ -16,6 +16,6 @@ D:/project/opengl_glsl_example/build/x64/support/glad/CMakeFiles/rebuild_cache.d
 D:/project/opengl_glsl_example/build/x64/support/tojpg/CMakeFiles/tojpg.dir
 D:/project/opengl_glsl_example/build/x64/support/tojpg/CMakeFiles/edit_cache.dir
 D:/project/opengl_glsl_example/build/x64/support/tojpg/CMakeFiles/rebuild_cache.dir
-D:/project/opengl_glsl_example/build/x64/test/CMakeFiles/rebuild_cache.dir
-D:/project/opengl_glsl_example/build/x64/test/CMakeFiles/test.dir
-D:/project/opengl_glsl_example/build/x64/test/CMakeFiles/edit_cache.dir
+D:/project/opengl_glsl_example/build/x64/glsl1/CMakeFiles/edit_cache.dir
+D:/project/opengl_glsl_example/build/x64/glsl1/CMakeFiles/glsl1.dir
+D:/project/opengl_glsl_example/build/x64/glsl1/CMakeFiles/rebuild_cache.dir
